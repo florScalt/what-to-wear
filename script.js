@@ -89,14 +89,324 @@ const defaultItems = [
     type: 'formal',
     color: 'Brown',
     pattern: 'solid'
+  },
+  {
+    id: 9,
+    name: 'Black Overshirt',
+    image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'top',
+    type: 'casual',
+    color: 'Black',
+    pattern: 'solid'
+  },
+  {
+    id: 10,
+    name: 'Beige Knit Polo',
+    image: 'https://placehold.co/400x520/F3E8D7/08050F?text=Beige+Knit+Polo',
+    category: 'top',
+    type: 'smart_casual',
+    color: 'Beige',
+    pattern: 'solid',
+    tags: ['smart', 'premium']
+  },
+  {
+    id: 11,
+    name: 'Light Blue Oxford Shirt',
+    image: 'https://images.unsplash.com/photo-1603252109303-2751441dd157?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'top',
+    type: 'formal',
+    color: 'Light Blue',
+    pattern: 'solid'
+  },
+  {
+    id: 12,
+    name: 'Olive Relaxed Tee',
+    image: 'https://images.unsplash.com/photo-1622470953794-aa9c70b0fb9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'top',
+    type: 'casual',
+    color: 'Green',
+    pattern: 'solid',
+    colorFamily: 'green',
+    tags: ['relaxed']
+  },
+  {
+    id: 13,
+    name: 'Black Satin Blouse',
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'top',
+    type: 'formal',
+    color: 'Black',
+    pattern: 'solid',
+    tags: ['premium', 'elegant']
+  },
+  {
+    id: 14,
+    name: 'Cream Wide Leg Trousers',
+    image: 'https://placehold.co/400x520/F2EEE8/08050F?text=Cream+Wide+Leg+Trousers',
+    category: 'bottom',
+    type: 'formal',
+    color: 'Beige',
+    pattern: 'solid'
+  },
+  {
+    id: 15,
+    name: 'Gray Tailored Pants',
+    image: 'https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'bottom',
+    type: 'formal',
+    color: 'Gray',
+    pattern: 'solid'
+  },
+  {
+    id: 16,
+    name: 'Black Relaxed Jeans',
+    image: 'https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'bottom',
+    type: 'casual',
+    color: 'Black',
+    pattern: 'solid'
+  },
+  {
+    id: 17,
+    name: 'Beige Linen Shorts',
+    image: 'https://placehold.co/400x520/EFDEC8/08050F?text=Beige+Linen+Shorts',
+    category: 'bottom',
+    type: 'casual',
+    color: 'Beige',
+    pattern: 'solid',
+    tags: ['relaxed']
+  },
+  {
+    id: 18,
+    name: 'Navy Pleated Trousers',
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'bottom',
+    type: 'formal',
+    color: 'Blue',
+    pattern: 'solid',
+    tags: ['office']
+  },
+  {
+    id: 19,
+    name: 'Black Wool Coat',
+    image: 'https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'outerwear',
+    type: 'formal',
+    color: 'Black',
+    pattern: 'solid',
+    tags: ['premium', 'elegant']
+  },
+  {
+    id: 20,
+    name: 'Beige Trench Coat',
+    image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'outerwear',
+    type: 'formal',
+    color: 'Beige',
+    pattern: 'solid',
+    tags: ['office', 'premium']
+  },
+  {
+    id: 21,
+    name: 'Blue Denim Jacket',
+    image: 'https://placehold.co/400x520/CAD7E7/08050F?text=Blue+Denim+Jacket',
+    category: 'outerwear',
+    type: 'casual',
+    color: 'Blue',
+    pattern: 'solid',
+    tags: ['street']
+  },
+  {
+    id: 22,
+    name: 'Gray Zip Hoodie',
+    image: 'https://images.unsplash.com/photo-1503341504253-dff4815485f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'outerwear',
+    type: 'sport',
+    color: 'Gray',
+    pattern: 'solid',
+    tags: ['sport', 'relaxed']
+  },
+  {
+    id: 23,
+    name: 'White Leather Sneakers',
+    image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'shoes',
+    type: 'casual',
+    color: 'White',
+    pattern: 'solid'
+  },
+  {
+    id: 24,
+    name: 'Black Loafers',
+    image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'shoes',
+    type: 'formal',
+    color: 'Black',
+    pattern: 'solid',
+    tags: ['office', 'premium']
+  },
+  {
+    id: 25,
+    name: 'Beige Minimal Sneakers',
+    image: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'shoes',
+    type: 'casual',
+    color: 'Beige',
+    pattern: 'solid',
+    tags: ['minimal']
+  },
+  {
+    id: 26,
+    name: 'Black Running Sneakers',
+    image: 'https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+    category: 'shoes',
+    type: 'sport',
+    color: 'Black',
+    pattern: 'solid',
+    tags: ['sport']
   }
 ];
 
+const SLOT_ORDER = ['outerwear', 'top', 'bottom', 'shoes'];
+
+const SLOT_LABELS = {
+  top: 'Top',
+  bottom: 'Bottom',
+  outerwear: 'Outerwear',
+  shoes: 'Shoes',
+  accessory: 'Accessories'
+};
+
+const COLOR_FAMILY_LABELS = {
+  dark_neutral: 'Dark neutral',
+  neutral_gray: 'Gray scale',
+  light_neutral: 'Light neutral',
+  earth: 'Earth tones',
+  blue: 'Blue',
+  green: 'Green',
+  bold: 'Bold tones'
+};
+
+const OUTFIT_CATEGORIES = {
+  monochrome_formal: {
+    label: 'Monochromatic formal',
+    targetFormality: 4.4,
+    monochrome: true,
+    preferredTypes: ['formal'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['office', 'elegant', 'premium'],
+    preferredFamilies: ['dark_neutral', 'earth', 'blue']
+  },
+  monochrome_casual: {
+    label: 'Monochromatic casual',
+    targetFormality: 2.5,
+    monochrome: true,
+    preferredTypes: ['casual'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['relaxed', 'minimal'],
+    preferredFamilies: ['earth', 'light_neutral', 'blue', 'dark_neutral']
+  },
+  formal: {
+    label: 'Formal',
+    targetFormality: 4.2,
+    preferredTypes: ['formal'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['office', 'elegant'],
+    preferredFamilies: ['dark_neutral', 'blue', 'earth']
+  },
+  casual: {
+    label: 'Casual',
+    targetFormality: 2.4,
+    preferredTypes: ['casual'],
+    preferredTags: ['relaxed'],
+    preferredFamilies: ['light_neutral', 'blue', 'earth']
+  },
+  smart_casual: {
+    label: 'Smart casual',
+    targetFormality: 3.3,
+    preferredTypes: ['casual', 'formal'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['smart', 'minimal'],
+    preferredFamilies: ['blue', 'earth', 'dark_neutral']
+  },
+  streetwear: {
+    label: 'Streetwear',
+    targetFormality: 2,
+    preferredTypes: ['casual', 'sport'],
+    preferredTags: ['street', 'sport'],
+    preferredFamilies: ['dark_neutral', 'blue', 'bold']
+  },
+  minimalist: {
+    label: 'Minimalist',
+    targetFormality: 3.1,
+    preferredTypes: ['casual', 'formal'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['minimal'],
+    preferredFamilies: ['light_neutral', 'dark_neutral', 'earth']
+  },
+  elegant: {
+    label: 'Elegant',
+    targetFormality: 4.1,
+    preferredTypes: ['formal'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['elegant', 'premium'],
+    preferredFamilies: ['dark_neutral', 'earth', 'blue']
+  },
+  sport: {
+    label: 'Sport',
+    targetFormality: 1.6,
+    preferredTypes: ['sport', 'casual'],
+    preferredTags: ['sport', 'street'],
+    preferredFamilies: ['light_neutral', 'blue', 'green']
+  },
+  night_out: {
+    label: 'Night out',
+    targetFormality: 3.8,
+    preferredTypes: ['formal', 'casual'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['elegant', 'premium'],
+    preferredFamilies: ['dark_neutral', 'blue']
+  },
+  office: {
+    label: 'Office',
+    targetFormality: 4,
+    preferredTypes: ['formal'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['office', 'smart'],
+    preferredFamilies: ['blue', 'dark_neutral', 'earth']
+  },
+  special_event: {
+    label: 'Special event',
+    targetFormality: 4.5,
+    preferredTypes: ['formal'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['elegant', 'premium'],
+    preferredFamilies: ['dark_neutral', 'earth']
+  },
+  relaxed: {
+    label: 'Relaxed',
+    targetFormality: 2.1,
+    preferredTypes: ['casual'],
+    preferredTags: ['relaxed'],
+    preferredFamilies: ['light_neutral', 'earth', 'blue']
+  },
+  premium: {
+    label: 'Premium',
+    targetFormality: 4.3,
+    preferredTypes: ['formal'],
+    preferredPatterns: ['solid'],
+    preferredTags: ['premium', 'elegant', 'minimal'],
+    preferredFamilies: ['dark_neutral', 'earth', 'blue']
+  }
+};
+
 let clothes = [];
 let savedOutfits = [];
+let generatedOutfits = [];
 let profile = { name: '', gender: '', city: '' };
 let users = [];
 let currentUser = null;
+let currentClosetFilter = 'all';
 
 // DOM Elements
 const views = document.querySelectorAll('.view');
@@ -104,13 +414,6 @@ const navItems = document.querySelectorAll('.nav-item');
 const toastEl = document.getElementById('toast');
 
 // Views
-const loginView = document.getElementById('view-login');
-const registerView = document.getElementById('view-register');
-const labView = document.getElementById('view-lab');
-const closetView = document.getElementById('view-closet');
-const addItemView = document.getElementById('view-add-item');
-const savedView = document.getElementById('view-saved');
-const profileView = document.getElementById('view-profile');
 const bottomNav = document.getElementById('bottom-nav');
 
 // Auth Forms & Links
@@ -124,7 +427,11 @@ const btnLogout = document.getElementById('btn-logout');
 const addItemForm = document.getElementById('add-item-form');
 const itemImageInput = document.getElementById('item-image');
 const imagePreview = document.getElementById('image-preview');
+const imagePreviewActions = document.getElementById('image-preview-actions');
+const btnReplaceImage = document.getElementById('btn-replace-image');
+const btnRemoveImage = document.getElementById('btn-remove-image');
 const profileForm = document.getElementById('profile-form');
+const outfitCategorySelect = document.getElementById('outfit-category');
 
 // Lab elements
 const btnGenerate = document.getElementById('btn-generate');
@@ -140,6 +447,228 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 // Saved elements
 const savedContainer = document.getElementById('saved-outfits-container');
 
+function cloneData(value) {
+  return JSON.parse(JSON.stringify(value));
+}
+
+function createUid(prefix) {
+  return `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+}
+
+function getCategoryConfig(categoryKey) {
+  return OUTFIT_CATEGORIES[categoryKey] || OUTFIT_CATEGORIES.casual;
+}
+
+function normalizeItemType(type) {
+  if (type === 'smart_casual') return 'casual';
+  return type;
+}
+
+function getCategoryLabel(categoryKey) {
+  return getCategoryConfig(categoryKey).label;
+}
+
+function formatColorFamilyLabel(colorFamily) {
+  return COLOR_FAMILY_LABELS[colorFamily] || 'Mixed';
+}
+
+function isItemValidForSlot(item, slot) {
+  return Boolean(item) && item.category === slot;
+}
+
+function sanitizeOutfitItemsBySlot(items) {
+  const sanitized = {};
+
+  SLOT_ORDER.forEach((slot) => {
+    const item = items?.[slot];
+    if (isItemValidForSlot(item, slot)) {
+      sanitized[slot] = enrichItem(item);
+    }
+  });
+
+  return sanitized;
+}
+
+function needsContrastRing(colorValue) {
+  return ['#ffffff', '#f5f5dc'].includes((colorValue || '').toLowerCase());
+}
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function getColorHex(colorName) {
+  const color = presetColors.find((entry) => entry.name.toLowerCase() === String(colorName || '').toLowerCase());
+  return color ? color.value : colorName;
+}
+
+function getColorFamily(colorName) {
+  const normalized = String(colorName || '').toLowerCase();
+
+  if (normalized.includes('black')) return 'dark_neutral';
+  if (normalized.includes('white')) return 'light_neutral';
+  if (normalized.includes('gray') || normalized.includes('grey')) return 'neutral_gray';
+  if (normalized.includes('beige') || normalized.includes('brown') || normalized.includes('cream') || normalized.includes('tan')) return 'earth';
+  if (normalized.includes('blue') || normalized.includes('navy')) return 'blue';
+  if (normalized.includes('green') || normalized.includes('olive')) return 'green';
+  if (normalized.includes('red') || normalized.includes('pink') || normalized.includes('purple') || normalized.includes('yellow')) return 'bold';
+
+  return 'bold';
+}
+
+function getMonochromeMatches(colorFamily) {
+  const families = {
+    dark_neutral: ['dark_neutral', 'neutral_gray'],
+    neutral_gray: ['dark_neutral', 'neutral_gray', 'light_neutral'],
+    light_neutral: ['neutral_gray', 'light_neutral', 'earth'],
+    earth: ['earth', 'light_neutral'],
+    blue: ['blue'],
+    green: ['green'],
+    bold: ['bold']
+  };
+
+  return families[colorFamily] || [colorFamily];
+}
+
+function areFamiliesMonochromeCompatible(itemFamily, dominantFamily) {
+  return getMonochromeMatches(dominantFamily).includes(itemFamily);
+}
+
+function getItemFormalityLevel(item) {
+  if (typeof item.formalityLevel === 'number') return item.formalityLevel;
+
+  const normalizedType = normalizeItemType(item.type);
+  let score = 2.6;
+
+  if (normalizedType === 'formal') score = 4.3;
+  if (normalizedType === 'casual') score = 2.4;
+  if (normalizedType === 'sport') score = 1.5;
+
+  if (item.category === 'outerwear' && item.type === 'formal') score += 0.1;
+  if (item.category === 'shoes' && item.type === 'formal') score += 0.2;
+  if (item.pattern === 'printed') score -= 0.25;
+
+  return clamp(Number(score.toFixed(1)), 1, 5);
+}
+
+function getItemTags(item) {
+  const tags = new Set(item.tags || []);
+  const colorFamily = getColorFamily(item.color);
+  const normalizedType = normalizeItemType(item.type);
+
+  if (normalizedType === 'formal') {
+    tags.add('office');
+    tags.add('elegant');
+    tags.add('premium');
+  }
+
+  if (normalizedType === 'casual') {
+    tags.add('relaxed');
+    tags.add('smart');
+  }
+
+  if (normalizedType === 'sport') {
+    tags.add('sport');
+    tags.add('street');
+  }
+
+  if (item.pattern === 'solid') {
+    tags.add('minimal');
+  } else {
+    tags.add('statement');
+    tags.add('street');
+  }
+
+  if (['dark_neutral', 'light_neutral', 'earth'].includes(colorFamily)) {
+    tags.add('premium');
+    tags.add('minimal');
+  }
+
+  return Array.from(tags);
+}
+
+function enrichItem(item) {
+  if (!item) return null;
+
+  return {
+    ...item,
+    type: normalizeItemType(item.type),
+    colorFamily: item.colorFamily || getColorFamily(item.color),
+    formalityLevel: getItemFormalityLevel(item),
+    tags: getItemTags(item)
+  };
+}
+
+function mergeDefaultItems(existingItems) {
+  const defaultMap = new Map(defaultItems.map((item) => [String(item.id), item]));
+  const merged = existingItems.map((item) => {
+    const defaultVersion = defaultMap.get(String(item.id));
+    return defaultVersion ? { ...defaultVersion } : item;
+  });
+
+  const existingIds = new Set(merged.map((item) => String(item.id)));
+  defaultItems.forEach((item) => {
+    if (!existingIds.has(String(item.id))) merged.push(item);
+  });
+
+  return merged;
+}
+
+function normalizeOutfitData(outfit, fallbackCategory = 'casual') {
+  if (!outfit) return null;
+
+  if (outfit.items) {
+    const items = sanitizeOutfitItemsBySlot(outfit.items);
+
+    const category = outfit.category || fallbackCategory;
+    const dominantColorFamily = outfit.dominantColorFamily || deriveDominantColorFamily(items, category);
+    const lockedItemIds = Array.isArray(outfit.lockedItemIds) ? outfit.lockedItemIds.filter((slot) => items[slot]) : [];
+    const averageFormality = calculateAverageFormality(items);
+
+    return {
+      id: outfit.id || createUid('outfit'),
+      category,
+      dominantColorFamily,
+      isMonochrome: Boolean(outfit.isMonochrome || getCategoryConfig(category).monochrome),
+      items,
+      lockedItemIds,
+      formalityLevel: Number((outfit.formalityLevel || averageFormality).toFixed(1)),
+      explanation: outfit.explanation || buildOutfitExplanation({
+        category,
+        dominantColorFamily,
+        items,
+        formalityLevel: averageFormality,
+        isMonochrome: getCategoryConfig(category).monochrome
+      })
+    };
+  }
+
+  const items = {};
+  SLOT_ORDER.forEach((slot) => {
+    if (isItemValidForSlot(outfit[slot], slot)) items[slot] = enrichItem(outfit[slot]);
+  });
+
+  const dominantColorFamily = deriveDominantColorFamily(items, fallbackCategory);
+  const averageFormality = calculateAverageFormality(items);
+
+  return {
+    id: outfit.id || createUid('outfit'),
+    category: fallbackCategory,
+    dominantColorFamily,
+    isMonochrome: Boolean(getCategoryConfig(fallbackCategory).monochrome),
+    items,
+    lockedItemIds: [],
+    formalityLevel: Number(averageFormality.toFixed(1)),
+    explanation: buildOutfitExplanation({
+      category: fallbackCategory,
+      dominantColorFamily,
+      items,
+      formalityLevel: averageFormality,
+      isMonochrome: getCategoryConfig(fallbackCategory).monochrome
+    })
+  };
+}
+
 // ==========================================
 // INITIALIZATION
 // ==========================================
@@ -148,29 +677,41 @@ function renderColorPalette() {
   const palette = document.getElementById('item-color-palette');
   const input = document.getElementById('item-color');
   if (!palette) return;
+
   palette.innerHTML = '';
-  
-  presetColors.forEach(color => {
+
+  presetColors.forEach((color) => {
     const chip = document.createElement('div');
     chip.className = 'color-chip';
     chip.style.backgroundColor = color.value;
-    if (color.value === '#ffffff') chip.style.border = '1px solid #dfe6e9';
-    
+    if (needsContrastRing(color.value)) chip.classList.add('is-light-chip');
+
     chip.addEventListener('click', () => {
-      document.querySelectorAll('.color-chip').forEach(c => c.classList.remove('selected'));
+      document.querySelectorAll('.color-chip').forEach((entry) => entry.classList.remove('selected'));
       chip.classList.add('selected');
       input.value = color.name;
     });
-    
+
     palette.appendChild(chip);
   });
 }
 
+function renderCategoryOptions() {
+  if (!outfitCategorySelect) return;
+
+  outfitCategorySelect.innerHTML = Object.entries(OUTFIT_CATEGORIES)
+    .map(([value, config]) => `<option value="${value}">${config.label}</option>`)
+    .join('');
+
+  outfitCategorySelect.value = 'casual';
+}
+
 function init() {
   renderColorPalette();
+  renderCategoryOptions();
   loadData();
   bindEvents();
-  
+
   if (currentUser) {
     showApp();
   } else {
@@ -189,13 +730,19 @@ function loadData() {
   if (storedCurrentUser) currentUser = JSON.parse(storedCurrentUser);
 
   if (storedClothes) {
-    clothes = JSON.parse(storedClothes);
+    clothes = mergeDefaultItems(JSON.parse(storedClothes));
+    saveData('clothes');
   } else {
-    clothes = [...defaultItems]; // Use dummy data
+    clothes = [...defaultItems];
     saveData('clothes');
   }
 
-  if (storedSaved) savedOutfits = JSON.parse(storedSaved);
+  if (storedSaved) {
+    savedOutfits = JSON.parse(storedSaved)
+      .map((outfit) => normalizeOutfitData(outfit))
+      .filter(Boolean);
+  }
+
   if (storedProfile) profile = JSON.parse(storedProfile);
 }
 
@@ -221,10 +768,9 @@ function showApp() {
   renderCloset('all');
   renderSavedOutfits();
   renderProfile();
-  
-  // Reset navigation to lab
-  navItems.forEach(n => n.classList.remove('active'));
-  if (navItems.length > 0) navItems[0].classList.add('active'); // Lab tab
+
+  navItems.forEach((item) => item.classList.remove('active'));
+  if (navItems.length > 0) navItems[0].classList.add('active');
   switchView('view-lab');
 }
 
@@ -232,38 +778,39 @@ function handleLogin(e) {
   e.preventDefault();
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
-  
-  const user = users.find(u => u.email === email && u.password === password);
-  if (user) {
-    currentUser = user;
-    saveData('currentUser');
-    loginForm.reset();
-    showToast('Login successful!');
-    showApp();
-  } else {
+
+  const user = users.find((entry) => entry.email === email && entry.password === password);
+  if (!user) {
     showToast('Invalid email or password');
+    return;
   }
+
+  currentUser = user;
+  saveData('currentUser');
+  loginForm.reset();
+  showToast('Login successful');
+  showApp();
 }
 
 function handleRegister(e) {
   e.preventDefault();
   const email = document.getElementById('register-email').value;
   const password = document.getElementById('register-password').value;
-  
-  if (users.find(u => u.email === email)) {
+
+  if (users.find((entry) => entry.email === email)) {
     showToast('Email already registered');
     return;
   }
-  
+
   const newUser = { email, password };
   users.push(newUser);
   saveData('users');
-  
+
   currentUser = newUser;
   saveData('currentUser');
-  
+
   registerForm.reset();
-  showToast('Account created!');
+  showToast('Account created');
   showApp();
 }
 
@@ -279,53 +826,61 @@ function handleLogout() {
 // ==========================================
 
 function bindEvents() {
-  // Auth Links
-  linkRegister.addEventListener('click', (e) => { e.preventDefault(); showAuth('view-register'); });
-  linkLogin.addEventListener('click', (e) => { e.preventDefault(); showAuth('view-login'); });
-  
-  // Auth Forms
+  linkRegister.addEventListener('click', (e) => {
+    e.preventDefault();
+    showAuth('view-register');
+  });
+
+  linkLogin.addEventListener('click', (e) => {
+    e.preventDefault();
+    showAuth('view-login');
+  });
+
   loginForm.addEventListener('submit', handleLogin);
   registerForm.addEventListener('submit', handleRegister);
+
   if (btnLogout) btnLogout.addEventListener('click', handleLogout);
 
-  navItems.forEach(item => {
+  navItems.forEach((item) => {
     item.addEventListener('click', () => {
       const target = item.getAttribute('data-target');
       switchView(target);
-      
-      navItems.forEach(n => n.classList.remove('active'));
+
+      navItems.forEach((entry) => entry.classList.remove('active'));
       item.classList.add('active');
     });
   });
 
-  // Filter tabs
-  filterBtns.forEach(btn => {
+  filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
+      filterBtns.forEach((entry) => entry.classList.remove('active'));
       btn.classList.add('active');
       renderCloset(btn.getAttribute('data-filter'));
     });
   });
 
-  // Image Upload Preview
   itemImageInput.addEventListener('change', handleImageUpload);
-
-  // Forms
+  if (btnReplaceImage) {
+    btnReplaceImage.addEventListener('click', () => {
+      itemImageInput.click();
+    });
+  }
+  if (btnRemoveImage) {
+    btnRemoveImage.addEventListener('click', clearUploadedImage);
+  }
   addItemForm.addEventListener('submit', handleAddItem);
   profileForm.addEventListener('submit', handleSaveProfile);
-
-  // Generate
   btnGenerate.addEventListener('click', generateOutfits);
 }
 
 function switchView(viewId) {
-  views.forEach(view => view.classList.remove('active'));
+  views.forEach((view) => view.classList.remove('active'));
   document.getElementById(viewId).classList.add('active');
   window.scrollTo(0, 0);
 }
 
-function showToast(msg) {
-  toastEl.textContent = msg;
+function showToast(message) {
+  toastEl.textContent = message;
   toastEl.classList.add('show');
   setTimeout(() => toastEl.classList.remove('show'), 3000);
 }
@@ -336,37 +891,371 @@ function showToast(msg) {
 
 let currentBase64Image = '';
 
+function clearUploadedImage() {
+  currentBase64Image = '';
+  imagePreview.src = '';
+  imagePreview.style.display = 'none';
+  imagePreview.classList.add('image-preview-hidden');
+  imagePreviewActions?.classList.add('image-preview-hidden');
+  itemImageInput.value = '';
+}
+
+function loadImageElement(src) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = reject;
+    image.src = src;
+  });
+}
+
+function getPixelOffset(x, y, width) {
+  return (y * width + x) * 4;
+}
+
+function getEdgeBackgroundSample(data, width, height) {
+  const samples = [];
+  const stepX = Math.max(1, Math.floor(width / 18));
+  const stepY = Math.max(1, Math.floor(height / 18));
+
+  for (let x = 0; x < width; x += stepX) {
+    samples.push(getPixelOffset(x, 0, width));
+    samples.push(getPixelOffset(x, height - 1, width));
+  }
+
+  for (let y = stepY; y < height - 1; y += stepY) {
+    samples.push(getPixelOffset(0, y, width));
+    samples.push(getPixelOffset(width - 1, y, width));
+  }
+
+  let red = 0;
+  let green = 0;
+  let blue = 0;
+
+  samples.forEach((offset) => {
+    red += data[offset];
+    green += data[offset + 1];
+    blue += data[offset + 2];
+  });
+
+  const count = samples.length || 1;
+  return {
+    r: red / count,
+    g: green / count,
+    b: blue / count
+  };
+}
+
+function getColorDistance(pixel, reference) {
+  const redDiff = pixel.r - reference.r;
+  const greenDiff = pixel.g - reference.g;
+  const blueDiff = pixel.b - reference.b;
+  return Math.sqrt(redDiff * redDiff + greenDiff * greenDiff + blueDiff * blueDiff);
+}
+
+function getBackgroundMask(data, width, height, reference, threshold, brightnessGate) {
+  const visited = new Uint8Array(width * height);
+  const queue = [];
+
+  function tryEnqueue(x, y) {
+    if (x < 0 || y < 0 || x >= width || y >= height) return;
+
+    const index = y * width + x;
+    if (visited[index]) return;
+
+    const offset = getPixelOffset(x, y, width);
+    const pixel = {
+      r: data[offset],
+      g: data[offset + 1],
+      b: data[offset + 2]
+    };
+
+    const brightness = (pixel.r + pixel.g + pixel.b) / 3;
+    const distance = getColorDistance(pixel, reference);
+
+    if (distance > threshold || brightness < brightnessGate) return;
+
+    visited[index] = 1;
+    queue.push(index);
+  }
+
+  for (let x = 0; x < width; x += 1) {
+    tryEnqueue(x, 0);
+    tryEnqueue(x, height - 1);
+  }
+
+  for (let y = 1; y < height - 1; y += 1) {
+    tryEnqueue(0, y);
+    tryEnqueue(width - 1, y);
+  }
+
+  while (queue.length > 0) {
+    const index = queue.shift();
+    const x = index % width;
+    const y = Math.floor(index / width);
+
+    tryEnqueue(x + 1, y);
+    tryEnqueue(x - 1, y);
+    tryEnqueue(x, y + 1);
+    tryEnqueue(x, y - 1);
+  }
+
+  return visited;
+}
+
+function getForegroundComponentMask(data, width, height, backgroundMask, background, threshold, brightnessGate) {
+  const foregroundCandidate = new Uint8Array(width * height);
+
+  for (let y = 0; y < height; y += 1) {
+    for (let x = 0; x < width; x += 1) {
+      const index = y * width + x;
+      if (backgroundMask[index]) continue;
+
+      const offset = index * 4;
+      const pixel = {
+        r: data[offset],
+        g: data[offset + 1],
+        b: data[offset + 2]
+      };
+      const brightness = (pixel.r + pixel.g + pixel.b) / 3;
+      const distance = getColorDistance(pixel, background);
+
+      if (distance > threshold || brightness < brightnessGate) {
+        foregroundCandidate[index] = 1;
+      }
+    }
+  }
+
+  const visited = new Uint8Array(width * height);
+  let bestComponent = null;
+  let bestScore = Number.NEGATIVE_INFINITY;
+  const centerX = width / 2;
+  const centerY = height / 2;
+
+  for (let index = 0; index < foregroundCandidate.length; index += 1) {
+    if (!foregroundCandidate[index] || visited[index]) continue;
+
+    const queue = [index];
+    const component = [];
+    visited[index] = 1;
+
+    let minX = width;
+    let minY = height;
+    let maxX = 0;
+    let maxY = 0;
+    let sumX = 0;
+    let sumY = 0;
+
+    while (queue.length > 0) {
+      const current = queue.shift();
+      component.push(current);
+
+      const x = current % width;
+      const y = Math.floor(current / width);
+      sumX += x;
+      sumY += y;
+      if (x < minX) minX = x;
+      if (y < minY) minY = y;
+      if (x > maxX) maxX = x;
+      if (y > maxY) maxY = y;
+
+      const neighbors = [
+        current - 1,
+        current + 1,
+        current - width,
+        current + width
+      ];
+
+      neighbors.forEach((neighbor) => {
+        if (neighbor < 0 || neighbor >= foregroundCandidate.length) return;
+
+        const neighborX = neighbor % width;
+        const neighborY = Math.floor(neighbor / width);
+        if (Math.abs(neighborX - x) + Math.abs(neighborY - y) !== 1) return;
+        if (!foregroundCandidate[neighbor] || visited[neighbor]) return;
+
+        visited[neighbor] = 1;
+        queue.push(neighbor);
+      });
+    }
+
+    const area = component.length;
+    const centroidX = sumX / area;
+    const centroidY = sumY / area;
+    const distanceToCenter = Math.abs(centroidX - centerX) + Math.abs(centroidY - centerY);
+    const widthCoverage = (maxX - minX + 1) / width;
+    const heightCoverage = (maxY - minY + 1) / height;
+    const centerBonus = Math.max(0, 1 - distanceToCenter / (width + height)) * 2500;
+    const coverageBonus = (widthCoverage * heightCoverage) * 1200;
+    const score = area + centerBonus + coverageBonus;
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestComponent = component;
+    }
+  }
+
+  const componentMask = new Uint8Array(width * height);
+  if (!bestComponent) return componentMask;
+
+  bestComponent.forEach((index) => {
+    componentMask[index] = 1;
+  });
+
+  return componentMask;
+}
+
+function getOpaqueBounds(data, width, height, alphaThreshold = 18) {
+  let minX = width;
+  let minY = height;
+  let maxX = -1;
+  let maxY = -1;
+
+  for (let y = 0; y < height; y += 1) {
+    for (let x = 0; x < width; x += 1) {
+      const offset = getPixelOffset(x, y, width);
+      if (data[offset + 3] <= alphaThreshold) continue;
+
+      if (x < minX) minX = x;
+      if (y < minY) minY = y;
+      if (x > maxX) maxX = x;
+      if (y > maxY) maxY = y;
+    }
+  }
+
+  if (maxX === -1 || maxY === -1) return null;
+
+  return { minX, minY, maxX, maxY };
+}
+
+function cropCanvasToBounds(sourceCanvas, bounds) {
+  if (!bounds) return sourceCanvas.toDataURL('image/png');
+
+  const sourceWidth = sourceCanvas.width;
+  const sourceHeight = sourceCanvas.height;
+  const contentWidth = bounds.maxX - bounds.minX + 1;
+  const contentHeight = bounds.maxY - bounds.minY + 1;
+  const paddingX = Math.max(12, Math.round(contentWidth * 0.08));
+  const paddingY = Math.max(12, Math.round(contentHeight * 0.08));
+
+  const cropX = Math.max(0, bounds.minX - paddingX);
+  const cropY = Math.max(0, bounds.minY - paddingY);
+  const cropRight = Math.min(sourceWidth, bounds.maxX + paddingX);
+  const cropBottom = Math.min(sourceHeight, bounds.maxY + paddingY);
+  const cropWidth = Math.max(1, cropRight - cropX);
+  const cropHeight = Math.max(1, cropBottom - cropY);
+
+  const targetCanvas = document.createElement('canvas');
+  const targetContext = targetCanvas.getContext('2d');
+  if (!targetContext) return sourceCanvas.toDataURL('image/png');
+
+  targetCanvas.width = cropWidth;
+  targetCanvas.height = cropHeight;
+  targetContext.drawImage(
+    sourceCanvas,
+    cropX,
+    cropY,
+    cropWidth,
+    cropHeight,
+    0,
+    0,
+    cropWidth,
+    cropHeight
+  );
+
+  return targetCanvas.toDataURL('image/png');
+}
+
+async function removeImageBackground(dataUrl) {
+  const image = await loadImageElement(dataUrl);
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d', { willReadFrequently: true });
+
+  if (!context) return dataUrl;
+
+  const maxSize = 1200;
+  const scale = Math.min(1, maxSize / Math.max(image.width, image.height));
+  canvas.width = Math.max(1, Math.round(image.width * scale));
+  canvas.height = Math.max(1, Math.round(image.height * scale));
+
+  context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+  const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+  const { data, width, height } = imageData;
+  const background = getEdgeBackgroundSample(data, width, height);
+  const brightness = (background.r + background.g + background.b) / 3;
+  const distanceThreshold = brightness > 205 ? 38 : 30;
+  const brightnessGate = brightness - 18;
+  const backgroundMask = getBackgroundMask(data, width, height, background, distanceThreshold, brightnessGate);
+  const foregroundMask = getForegroundComponentMask(
+    data,
+    width,
+    height,
+    backgroundMask,
+    background,
+    distanceThreshold + 8,
+    brightnessGate + 6
+  );
+
+  let removedPixels = 0;
+  for (let index = 0; index < backgroundMask.length; index += 1) {
+    if (foregroundMask[index]) continue;
+    const offset = index * 4;
+    data[offset + 3] = 0;
+    removedPixels += 1;
+  }
+
+  context.putImageData(imageData, 0, 0);
+  const opaqueBounds = getOpaqueBounds(data, width, height);
+  const removedRatio = removedPixels / Math.max(1, width * height);
+
+  if (!opaqueBounds || removedRatio < 0.08) {
+    return dataUrl;
+  }
+
+  return cropCanvasToBounds(canvas, opaqueBounds);
+}
+
 function handleImageUpload(e) {
   const file = e.target.files[0];
   if (!file) return;
 
   const reader = new FileReader();
-  reader.onload = function(event) {
-    currentBase64Image = event.target.result;
+  reader.onload = async function onLoad(event) {
+    const originalImage = event.target.result;
+
+    try {
+      currentBase64Image = await removeImageBackground(originalImage);
+    } catch (error) {
+      currentBase64Image = originalImage;
+    }
+
     imagePreview.src = currentBase64Image;
     imagePreview.style.display = 'block';
+    imagePreview.classList.remove('image-preview-hidden');
+    imagePreviewActions?.classList.remove('image-preview-hidden');
   };
   reader.readAsDataURL(file);
 }
 
 function handleAddItem(e) {
   e.preventDefault();
+
   if (!currentBase64Image) {
-    showToast('Please upload an image!');
+    showToast('Please upload an image');
     return;
   }
 
-  const itemName = document.getElementById('item-name').value;
   const itemColor = document.getElementById('item-color').value;
 
   if (!itemColor) {
-    showToast('Please select a color!');
+    showToast('Please select a color');
     return;
   }
 
   const newItem = {
     id: Date.now(),
-    name: itemName,
+    name: document.getElementById('item-name').value,
     image: currentBase64Image,
     category: document.getElementById('item-category').value,
     type: document.getElementById('item-type').value,
@@ -376,33 +1265,25 @@ function handleAddItem(e) {
 
   clothes.unshift(newItem);
   saveData('clothes');
-  
-  // Reset form
-  addItemForm.reset();
-  currentBase64Image = '';
-  imagePreview.src = '';
-  imagePreview.style.display = 'none';
 
-  showToast('Item added to closet!');
+  addItemForm.reset();
+  clearUploadedImage();
+
+  showToast('Item added to closet');
   renderCloset('all');
-  
-  // Navigate back to closet
-  navItems[1].click(); // Click Closet tab
+  navItems[1].click();
 }
 
 // ==========================================
 // CLOSET RENDER
 // ==========================================
 
-function getColorHex(colorName) {
-  const c = presetColors.find(c => c.name.toLowerCase() === colorName.toLowerCase());
-  return c ? c.value : colorName;
-}
-
 function renderCloset(filter) {
+  currentClosetFilter = filter;
   let filtered = clothes;
+
   if (filter !== 'all') {
-    filtered = clothes.filter(c => c.category === filter);
+    filtered = clothes.filter((item) => item.category === filter);
   }
 
   closetCount.textContent = `${filtered.length} items`;
@@ -410,31 +1291,86 @@ function renderCloset(filter) {
 
   if (filtered.length === 0) {
     closetGrid.innerHTML = `
-      <div style="grid-column: 1 / -1" class="empty-state">
+      <div class="empty-state full-span">
         <span class="material-icons">checkroom</span>
         <p>No items found.</p>
-      </div>`;
+      </div>
+    `;
     return;
   }
 
-  filtered.forEach(item => {
+  filtered.forEach((item) => {
     const card = document.createElement('div');
     card.className = 'item-card card';
     const hex = getColorHex(item.color || '');
+    const chipClass = needsContrastRing(hex) ? 'color-chip-small is-light-chip' : 'color-chip-small';
     const name = item.name || item.color;
+
     card.innerHTML = `
+      <button type="button" class="delete-item-btn" aria-label="Delete ${name}">
+        <span class="material-icons">close</span>
+      </button>
       <img src="${item.image}" alt="${name}">
       <div class="item-title" title="${name}">${name}</div>
-      <div style="margin-bottom: 8px;">
-        <span class="color-chip-small" style="background-color: ${hex}"></span>
+      <div class="item-color-preview">
+        <span class="${chipClass}" style="background-color: ${hex}"></span>
       </div>
       <div>
         <span class="item-badge">${item.type}</span>
         <span class="item-badge">${item.pattern}</span>
       </div>
     `;
+
+    const deleteButton = card.querySelector('.delete-item-btn');
+    deleteButton.addEventListener('click', () => {
+      deleteClosetItem(item.id, name);
+    });
+
     closetGrid.appendChild(card);
   });
+}
+
+function removeDeletedItemFromOutfits(outfits, deletedItemId) {
+  return outfits
+    .map((outfit) => {
+      const normalizedOutfit = normalizeOutfitData(outfit);
+      if (!normalizedOutfit) return null;
+
+      const nextItems = {};
+      Object.entries(normalizedOutfit.items).forEach(([slot, item]) => {
+        if (String(item.id) !== String(deletedItemId)) {
+          nextItems[slot] = item;
+        }
+      });
+
+      if (!nextItems.top || !nextItems.bottom) return null;
+
+      return buildOutfitObject({
+        category: normalizedOutfit.category,
+        items: nextItems,
+        lockedItemIds: (normalizedOutfit.lockedItemIds || []).filter((slot) => nextItems[slot]),
+        dominantColorFamily: deriveDominantColorFamily(nextItems, normalizedOutfit.category),
+        previousId: normalizedOutfit.id
+      });
+    })
+    .filter(Boolean);
+}
+
+function deleteClosetItem(itemId, itemName) {
+  const confirmed = window.confirm(`Delete "${itemName}" from your closet?`);
+  if (!confirmed) return;
+
+  clothes = clothes.filter((item) => String(item.id) !== String(itemId));
+  generatedOutfits = removeDeletedItemFromOutfits(generatedOutfits, itemId);
+  savedOutfits = removeDeletedItemFromOutfits(savedOutfits, itemId);
+
+  saveData('clothes');
+  saveData('saved');
+
+  renderCloset(currentClosetFilter);
+  renderGeneratedOutfits();
+  renderSavedOutfits();
+  showToast('Item deleted from closet');
 }
 
 // ==========================================
@@ -446,134 +1382,512 @@ function getRandomItem(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
-function generateOutfits() {
-  generatedContainer.innerHTML = '';
-  
-  // Generate 3 random outfits
-  for(let i=0; i<3; i++) {
-    const outfit = createValidOutfit();
-    if (outfit) {
-      renderOutfitCard(outfit, generatedContainer, false);
-    } else {
-      if (i === 0) {
-        generatedContainer.innerHTML = `<div class="empty-state"><p>Not enough compatible clothes to generate outfits!</p></div>`;
-      }
-      break;
-    }
-  }
+function shouldIncludeSlot(slot, baseOutfit = null) {
+  if (slot === 'top' || slot === 'bottom') return true;
+  if (slot === 'outerwear') return Boolean(toggleOuterwear.checked || baseOutfit?.items?.outerwear);
+  if (slot === 'shoes') return Boolean(toggleShoes.checked || baseOutfit?.items?.shoes);
+  return false;
 }
 
-function createValidOutfit() {
-  const tops = clothes.filter(c => c.category === 'top');
-  const bottoms = clothes.filter(c => c.category === 'bottom');
-  const outerwear = clothes.filter(c => c.category === 'outerwear');
-  const shoes = clothes.filter(c => c.category === 'shoes');
-
-  if (tops.length === 0 || bottoms.length === 0) return null;
-
-  let outfit = {};
-  let attempts = 0;
-  const maxAttempts = 50;
-
-  while (attempts < maxAttempts) {
-    attempts++;
-    
-    const top = getRandomItem(tops);
-    
-    // Filter bottoms based on rules
-    // Rule: if top is printed -> bottom must be solid
-    let validBottoms = bottoms;
-    if (top.pattern === 'printed') {
-      validBottoms = bottoms.filter(b => b.pattern === 'solid');
-    }
-    
-    // Rule: Avoid mixing formal with sport
-    if (top.type === 'formal') {
-      validBottoms = validBottoms.filter(b => b.type !== 'sport');
-    } else if (top.type === 'sport') {
-      validBottoms = validBottoms.filter(b => b.type !== 'formal');
-    }
-
-    if (validBottoms.length === 0) continue; // Try another top
-
-    const bottom = getRandomItem(validBottoms);
-
-    outfit = { top, bottom };
-
-    // Outerwear
-    if (toggleOuterwear.checked && outerwear.length > 0) {
-      let validOuter = outerwear;
-      // Avoid mixing formal/sport
-      if (top.type === 'formal' || bottom.type === 'formal') {
-        validOuter = validOuter.filter(o => o.type !== 'sport');
-      }
-      if (top.type === 'sport' || bottom.type === 'sport') {
-        validOuter = validOuter.filter(o => o.type !== 'formal');
-      }
-      
-      const out = getRandomItem(validOuter);
-      if (out) outfit.outerwear = out;
-    }
-
-    // Shoes
-    if (toggleShoes.checked && shoes.length > 0) {
-      let validShoes = shoes;
-      if (top.type === 'formal' || bottom.type === 'formal') {
-        validShoes = validShoes.filter(s => s.type !== 'sport');
-      }
-      if (top.type === 'sport' || bottom.type === 'sport') {
-        validShoes = validShoes.filter(s => s.type !== 'formal');
-      }
-      
-      const shoe = getRandomItem(validShoes);
-      if (shoe) outfit.shoes = shoe;
-    }
-
-    return outfit; // Found valid outfit
-  }
-  
-  return null;
+function getSlotItems(slot) {
+  return clothes
+    .filter((item) => isItemValidForSlot(item, slot))
+    .map((item) => enrichItem(item));
 }
 
-function renderOutfitCard(outfit, container, isSavedCard) {
-  const card = document.createElement('div');
-  card.className = 'outfit-card card';
-  
-  // Render slots in specific order
-  const order = ['outerwear', 'top', 'bottom', 'shoes'];
-  
-  let html = '';
-  order.forEach(cat => {
-    if (outfit[cat]) {
-      const item = outfit[cat];
-      html += `
-        <div class="outfit-slot">
-          <img class="outfit-slot-img" src="${item.image}" alt="">
-          <div class="outfit-slot-info">
-            <div class="outfit-slot-category">${item.category}</div>
-            <div class="outfit-slot-details">${item.name || item.color} • ${item.pattern} • ${item.type}</div>
-          </div>
-        </div>
-      `;
+function calculateAverageFormality(items) {
+  const values = Object.values(items).filter(Boolean).map((item) => item.formalityLevel);
+  if (values.length === 0) return 0;
+  return values.reduce((sum, value) => sum + value, 0) / values.length;
+}
+
+function isTypeCompatible(itemA, itemB) {
+  if (!itemA || !itemB) return true;
+  const pair = [itemA.type, itemB.type];
+  return !(pair.includes('formal') && pair.includes('sport'));
+}
+
+function isPatternCompatible(items) {
+  if (!items.top || !items.bottom) return true;
+  if (items.top.pattern === 'printed' && items.bottom.pattern !== 'solid') return false;
+  return true;
+}
+
+function validateOutfitItems(items, requireComplete = true) {
+  for (const slot of SLOT_ORDER) {
+    if (items[slot] && !isItemValidForSlot(items[slot], slot)) return false;
+  }
+
+  if (requireComplete && (!items.top || !items.bottom)) return false;
+  if (items.top && items.bottom && !isPatternCompatible(items)) return false;
+
+  const itemList = Object.values(items).filter(Boolean);
+  for (let index = 0; index < itemList.length; index += 1) {
+    for (let compareIndex = index + 1; compareIndex < itemList.length; compareIndex += 1) {
+      if (!isTypeCompatible(itemList[index], itemList[compareIndex])) return false;
+    }
+  }
+
+  return true;
+}
+
+function deriveDominantColorFamily(items, categoryKey) {
+  const config = getCategoryConfig(categoryKey);
+  const baseFamilies = Object.values(items)
+    .filter(Boolean)
+    .map((item) => item.colorFamily);
+
+  if (baseFamilies.length > 0) {
+    return baseFamilies.sort((familyA, familyB) => {
+      const scoreA = baseFamilies.filter((value) => value === familyA).length;
+      const scoreB = baseFamilies.filter((value) => value === familyB).length;
+      return scoreB - scoreA;
+    })[0];
+  }
+
+  const candidateFamilies = config.preferredFamilies || Object.keys(COLOR_FAMILY_LABELS);
+  for (const family of candidateFamilies) {
+    const hasTop = getSlotItems('top').some((item) => areFamiliesMonochromeCompatible(item.colorFamily, family));
+    const hasBottom = getSlotItems('bottom').some((item) => areFamiliesMonochromeCompatible(item.colorFamily, family));
+    if (hasTop && hasBottom) return family;
+  }
+
+  return candidateFamilies[0] || 'dark_neutral';
+}
+
+function getSlotCandidateScore(candidate, slot, currentItems, context) {
+  const { config, dominantColorFamily, replaceSlot, replaceItemId } = context;
+  if (!candidate) return Number.NEGATIVE_INFINITY;
+
+  if (replaceSlot === slot && String(candidate.id) === String(replaceItemId)) {
+    return Number.NEGATIVE_INFINITY;
+  }
+
+  if (Object.values(currentItems).some((item) => item && String(item.id) === String(candidate.id))) {
+    return Number.NEGATIVE_INFINITY;
+  }
+
+  const nextItems = { ...currentItems, [slot]: candidate };
+  if (!validateOutfitItems(nextItems, false)) return Number.NEGATIVE_INFINITY;
+
+  if (config.monochrome && !areFamiliesMonochromeCompatible(candidate.colorFamily, dominantColorFamily)) {
+    return Number.NEGATIVE_INFINITY;
+  }
+
+  let score = 0;
+
+  const formalityDifference = Math.abs(candidate.formalityLevel - config.targetFormality);
+  score += Math.max(0, 18 - formalityDifference * 7);
+
+  if ((config.preferredTypes || []).includes(candidate.type)) score += 8;
+  if ((config.preferredPatterns || []).includes(candidate.pattern)) score += 6;
+  if ((config.preferredTags || []).some((tag) => candidate.tags.includes(tag))) score += 7;
+  if ((config.preferredFamilies || []).includes(candidate.colorFamily)) score += 5;
+
+  if (slot === 'outerwear' && candidate.type === 'formal' && config.targetFormality >= 3.8) score += 3;
+  if (slot === 'shoes' && candidate.type === 'formal' && config.targetFormality >= 3.8) score += 4;
+  if (slot === 'shoes' && candidate.type === 'sport' && config.targetFormality <= 2) score += 4;
+
+  if (config.monochrome && areFamiliesMonochromeCompatible(candidate.colorFamily, dominantColorFamily)) score += 12;
+  if (!config.monochrome && currentItems.top && currentItems.top.colorFamily === candidate.colorFamily) score += 3;
+
+  return score + Math.random();
+}
+
+function pickBestSlotCandidate(slot, currentItems, context) {
+  const pool = getSlotItems(slot);
+  let bestCandidate = null;
+  let bestScore = Number.NEGATIVE_INFINITY;
+
+  pool.forEach((candidate) => {
+    const score = getSlotCandidateScore(candidate, slot, currentItems, context);
+    if (score > bestScore) {
+      bestScore = score;
+      bestCandidate = candidate;
     }
   });
 
-  if (!isSavedCard) {
-    html += `
-      <button class="secondary-btn save-outfit-btn">
-        <span class="material-icons">favorite_border</span> Save to Favorites
-      </button>
-    `;
+  return bestCandidate;
+}
+
+function scoreOutfit(outfit) {
+  if (!outfit || !validateOutfitItems(outfit.items)) return Number.NEGATIVE_INFINITY;
+
+  const config = getCategoryConfig(outfit.category);
+  const itemList = Object.values(outfit.items).filter(Boolean);
+  let score = 0;
+
+  const averageFormality = calculateAverageFormality(outfit.items);
+  score += Math.max(0, 40 - Math.abs(averageFormality - config.targetFormality) * 12);
+
+  itemList.forEach((item) => {
+    if ((config.preferredTypes || []).includes(item.type)) score += 8;
+    if ((config.preferredPatterns || []).includes(item.pattern)) score += 5;
+    if ((config.preferredTags || []).some((tag) => item.tags.includes(tag))) score += 6;
+    if ((config.preferredFamilies || []).includes(item.colorFamily)) score += 4;
+  });
+
+  if (config.monochrome) {
+    itemList.forEach((item) => {
+      if (areFamiliesMonochromeCompatible(item.colorFamily, outfit.dominantColorFamily)) {
+        score += 8;
+      } else {
+        score -= 14;
+      }
+    });
   }
 
-  card.innerHTML = html;
+  if (isPatternCompatible(outfit.items)) score += 10;
+  if (outfit.items.outerwear && shouldIncludeSlot('outerwear')) score += 2;
+  if (outfit.items.shoes && shouldIncludeSlot('shoes')) score += 2;
 
-  if (!isSavedCard) {
-    const btn = card.querySelector('.save-outfit-btn');
-    btn.addEventListener('click', () => {
-      saveOutfit(outfit);
-      btn.innerHTML = `<span class="material-icons">favorite</span> Saved`;
-      btn.disabled = true;
+  return score;
+}
+
+function buildOutfitExplanation(outfit) {
+  const config = getCategoryConfig(outfit.category);
+  const tone = outfit.isMonochrome
+    ? `keeps the look inside the ${formatColorFamilyLabel(outfit.dominantColorFamily).toLowerCase()} family`
+    : `balances ${formatColorFamilyLabel(outfit.dominantColorFamily).toLowerCase()} tones with the target vibe`;
+
+  const formalityNote = outfit.formalityLevel >= 4
+    ? 'The pieces lean polished and elevated.'
+    : outfit.formalityLevel <= 2.2
+      ? 'The mix stays relaxed and easy to wear.'
+      : 'The mix lands in a versatile middle ground.';
+
+  return `${config.label} outfit that ${tone}. ${formalityNote}`;
+}
+
+function buildOutfitObject({ category, items, lockedItemIds, dominantColorFamily, previousId = null }) {
+  const sanitizedItems = sanitizeOutfitItemsBySlot(items);
+  const formalityLevel = calculateAverageFormality(sanitizedItems);
+  const normalizedDominantColorFamily = dominantColorFamily || deriveDominantColorFamily(sanitizedItems, category);
+
+  return {
+    id: previousId || createUid('outfit'),
+    category,
+    dominantColorFamily: normalizedDominantColorFamily,
+    isMonochrome: Boolean(getCategoryConfig(category).monochrome),
+    items: sanitizedItems,
+    lockedItemIds: (lockedItemIds || []).filter((slot) => sanitizedItems[slot]),
+    formalityLevel: Number(formalityLevel.toFixed(1)),
+    explanation: buildOutfitExplanation({
+      category,
+      dominantColorFamily: normalizedDominantColorFamily,
+      items: sanitizedItems,
+      formalityLevel,
+      isMonochrome: Boolean(getCategoryConfig(category).monochrome)
+    })
+  };
+}
+
+function createOutfit(options = {}) {
+  const category = options.category || outfitCategorySelect.value || 'casual';
+  const config = getCategoryConfig(category);
+  const baseOutfit = options.baseOutfit ? normalizeOutfitData(options.baseOutfit, category) : null;
+  const lockedSlots = new Set(options.lockedItemIds || baseOutfit?.lockedItemIds || []);
+  const preserveAllExisting = Boolean(options.preserveAllExisting);
+  const replaceSlot = options.replaceSlot || null;
+  const replaceItemId = replaceSlot && baseOutfit?.items?.[replaceSlot] ? baseOutfit.items[replaceSlot].id : null;
+
+  let bestOutfit = null;
+  let bestScore = Number.NEGATIVE_INFINITY;
+
+  for (let attempt = 0; attempt < 100; attempt += 1) {
+    const items = {};
+
+    if (baseOutfit) {
+      SLOT_ORDER.forEach((slot) => {
+        if (!baseOutfit.items[slot]) return;
+        if (slot === replaceSlot) return;
+        if (preserveAllExisting || lockedSlots.has(slot)) items[slot] = enrichItem(baseOutfit.items[slot]);
+      });
+    }
+
+    const dominantColorFamily = deriveDominantColorFamily(items, category);
+    const fillOrder = ['top', 'bottom', 'outerwear', 'shoes'];
+    let failed = false;
+
+    for (const slot of fillOrder) {
+      if (items[slot]) continue;
+      if (!shouldIncludeSlot(slot, baseOutfit)) continue;
+
+      const candidate = pickBestSlotCandidate(slot, items, {
+        config,
+        dominantColorFamily,
+        replaceSlot,
+        replaceItemId
+      });
+
+      if (!candidate) {
+        if (slot === 'top' || slot === 'bottom' || replaceSlot === slot) {
+          failed = true;
+          break;
+        }
+        continue;
+      }
+
+      items[slot] = candidate;
+    }
+
+    if (failed || !validateOutfitItems(items)) continue;
+
+    const outfit = buildOutfitObject({
+      category,
+      items,
+      lockedItemIds: Array.from(lockedSlots),
+      dominantColorFamily,
+      previousId: options.previousId || null
+    });
+
+    const score = scoreOutfit(outfit);
+    if (score > bestScore) {
+      bestScore = score;
+      bestOutfit = outfit;
+    }
+  }
+
+  return bestOutfit;
+}
+
+function renderGeneratedOutfits() {
+  generatedContainer.innerHTML = '';
+
+  if (generatedOutfits.length === 0) {
+    generatedContainer.innerHTML = `
+      <div class="empty-state">
+        <span class="material-icons">style</span>
+        <p>Not enough compatible clothes to generate outfits for this category.</p>
+      </div>
+    `;
+    return;
+  }
+
+  generatedOutfits.forEach((outfit) => {
+    renderOutfitCard(outfit, generatedContainer, false);
+  });
+}
+
+function generateOutfits() {
+  const category = outfitCategorySelect.value || 'casual';
+  generatedOutfits = [];
+
+  for (let index = 0; index < 3; index += 1) {
+    const outfit = createOutfit({ category });
+    if (outfit) generatedOutfits.push(outfit);
+  }
+
+  renderGeneratedOutfits();
+}
+
+function updateGeneratedOutfit(outfitId, nextOutfit) {
+  generatedOutfits = generatedOutfits.map((outfit) => (
+    outfit.id === outfitId ? nextOutfit : outfit
+  ));
+  renderGeneratedOutfits();
+}
+
+function toggleOutfitLock(outfitId, slot) {
+  const outfit = generatedOutfits.find((entry) => entry.id === outfitId);
+  if (!outfit || !outfit.items[slot]) return;
+
+  const lockedSet = new Set(outfit.lockedItemIds || []);
+  if (lockedSet.has(slot)) {
+    lockedSet.delete(slot);
+  } else {
+    lockedSet.add(slot);
+  }
+
+  const nextOutfit = buildOutfitObject({
+    category: outfit.category,
+    items: cloneData(outfit.items),
+    lockedItemIds: Array.from(lockedSet),
+    dominantColorFamily: outfit.dominantColorFamily,
+    previousId: outfit.id
+  });
+
+  updateGeneratedOutfit(outfitId, nextOutfit);
+}
+
+function regenerateExistingOutfit(outfitId, options = {}) {
+  const currentOutfit = generatedOutfits.find((entry) => entry.id === outfitId);
+  if (!currentOutfit) return;
+
+  if (options.replaceSlot && !SLOT_ORDER.includes(options.replaceSlot)) {
+    showToast('That outfit piece cannot be changed from here');
+    return;
+  }
+
+  const nextCategory = options.category || currentOutfit.category;
+  const nextOutfit = createOutfit({
+    category: nextCategory,
+    baseOutfit: currentOutfit,
+    lockedItemIds: currentOutfit.lockedItemIds,
+    preserveAllExisting: Boolean(options.preserveAllExisting),
+    replaceSlot: options.replaceSlot || null,
+    previousId: currentOutfit.id
+  });
+
+  if (!nextOutfit) {
+    showToast('Could not find a compatible update for that request');
+    return;
+  }
+
+  updateGeneratedOutfit(outfitId, nextOutfit);
+}
+
+function getFormalityLabel(level) {
+  if (level >= 4.1) return 'High formality';
+  if (level >= 3) return 'Balanced formality';
+  return 'Low formality';
+}
+
+function getOutfitActionLabel(action) {
+  const labels = {
+    regenerate: 'Regenerate unlocked',
+    more_formal: 'More formal',
+    more_casual: 'More casual',
+    mono_casual: 'Mono casual',
+    mono_formal: 'Mono formal'
+  };
+
+  return labels[action] || action;
+}
+
+function deleteSavedOutfit(outfitId) {
+  savedOutfits = savedOutfits.filter((outfit) => outfit.id !== outfitId);
+  saveData('saved');
+  renderSavedOutfits();
+  showToast('Favorite removed');
+}
+
+function buildRefineCategory(currentCategory, action) {
+  if (action === 'regenerate') return currentCategory;
+  if (action === 'more_formal') return 'formal';
+  if (action === 'more_casual') return 'casual';
+  if (action === 'mono_casual') return 'monochrome_casual';
+  if (action === 'mono_formal') return 'monochrome_formal';
+  return currentCategory;
+}
+
+function renderOutfitCard(outfit, container, isSavedCard) {
+  const normalizedOutfit = normalizeOutfitData(outfit);
+  const card = document.createElement('div');
+  card.className = 'outfit-card card';
+
+  const slotsHtml = SLOT_ORDER
+    .filter((slot) => normalizedOutfit.items[slot])
+    .map((slot) => {
+      const item = normalizedOutfit.items[slot];
+      const isLocked = (normalizedOutfit.lockedItemIds || []).includes(slot);
+
+      return `
+        <div class="outfit-slot" data-slot="${slot}">
+          <img class="outfit-slot-img" src="${item.image}" alt="${item.name || slot}">
+          <div class="outfit-slot-info">
+            <div class="outfit-slot-topline">
+              <div class="outfit-slot-category">${SLOT_LABELS[slot]}</div>
+              ${isSavedCard ? '' : `
+                <div class="slot-actions">
+                  <button type="button" class="slot-action-btn ${isLocked ? 'active' : ''}" data-lock-slot="${slot}">
+                    ${isLocked ? 'Keeping' : 'Keep'}
+                  </button>
+                  <button type="button" class="slot-action-btn" data-change-slot="${slot}">
+                    Change
+                  </button>
+                </div>
+              `}
+            </div>
+            <div class="outfit-slot-details">${item.name || item.color} - ${item.pattern} - ${item.type}</div>
+          </div>
+        </div>
+      `;
+    })
+    .join('');
+
+  const actionButtons = isSavedCard
+    ? `
+      <button type="button" class="delete-item-btn delete-saved-btn" aria-label="Remove favorite">
+        <span class="material-icons">close</span>
+      </button>
+    `
+    : `
+      <div class="outfit-actions">
+        <button type="button" class="micro-btn micro-btn-repeat" data-refine-action="regenerate">${getOutfitActionLabel('regenerate')}</button>
+        <button type="button" class="micro-btn" data-refine-action="more_formal">${getOutfitActionLabel('more_formal')}</button>
+        <button type="button" class="micro-btn" data-refine-action="more_casual">${getOutfitActionLabel('more_casual')}</button>
+        <button type="button" class="micro-btn" data-refine-action="mono_casual">${getOutfitActionLabel('mono_casual')}</button>
+        <button type="button" class="micro-btn" data-refine-action="mono_formal">${getOutfitActionLabel('mono_formal')}</button>
+      </div>
+      <button class="secondary-btn save-outfit-btn">
+        <span class="material-icons">favorite_border</span>
+        <span>Save to Favorites</span>
+      </button>
+    `;
+
+  card.innerHTML = `
+    <div class="outfit-header">
+      <div>
+        <div class="outfit-title">${getCategoryLabel(normalizedOutfit.category)}</div>
+        <div class="outfit-subtitle">Color lead: ${formatColorFamilyLabel(normalizedOutfit.dominantColorFamily)}</div>
+      </div>
+      <div class="outfit-meta-pills">
+        <span class="outfit-pill">${normalizedOutfit.isMonochrome ? 'Monochrome' : 'Mixed palette'}</span>
+        <span class="outfit-pill">${getFormalityLabel(normalizedOutfit.formalityLevel)}</span>
+      </div>
+    </div>
+    ${slotsHtml}
+    <div class="outfit-structure">
+      <div class="outfit-structure-row"><span>Style</span><strong>${getCategoryLabel(normalizedOutfit.category)}</strong></div>
+      <div class="outfit-structure-row"><span>Dominant color</span><strong>${formatColorFamilyLabel(normalizedOutfit.dominantColorFamily)}</strong></div>
+      <div class="outfit-structure-row"><span>Formality</span><strong>${normalizedOutfit.formalityLevel}/5</strong></div>
+      <div class="outfit-structure-row"><span>Accessories</span><strong>Not available yet</strong></div>
+    </div>
+    <p class="outfit-explanation">${normalizedOutfit.explanation}</p>
+    ${actionButtons}
+  `;
+
+  if (isSavedCard) {
+    const removeButton = card.querySelector('.delete-saved-btn');
+    removeButton?.addEventListener('click', () => {
+      deleteSavedOutfit(normalizedOutfit.id);
+    });
+  } else {
+    card.querySelectorAll('[data-lock-slot]').forEach((button) => {
+      button.addEventListener('click', () => {
+        toggleOutfitLock(normalizedOutfit.id, button.dataset.lockSlot);
+      });
+    });
+
+    card.querySelectorAll('[data-change-slot]').forEach((button) => {
+      button.addEventListener('click', () => {
+        regenerateExistingOutfit(normalizedOutfit.id, {
+          category: normalizedOutfit.category,
+          replaceSlot: button.dataset.changeSlot,
+          preserveAllExisting: true
+        });
+      });
+    });
+
+    card.querySelectorAll('[data-refine-action]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const nextCategory = buildRefineCategory(normalizedOutfit.category, button.dataset.refineAction);
+        regenerateExistingOutfit(normalizedOutfit.id, {
+          category: nextCategory,
+          preserveAllExisting: false
+        });
+      });
+    });
+
+    const saveButton = card.querySelector('.save-outfit-btn');
+    saveButton.addEventListener('click', () => {
+      saveOutfit(normalizedOutfit);
+      saveButton.innerHTML = `
+        <span class="material-icons">favorite</span>
+        <span>Saved</span>
+      `;
+      saveButton.disabled = true;
     });
   }
 
@@ -585,24 +1899,26 @@ function renderOutfitCard(outfit, container, isSavedCard) {
 // ==========================================
 
 function saveOutfit(outfit) {
-  savedOutfits.unshift({ id: Date.now(), ...outfit });
+  savedOutfits.unshift(cloneData(normalizeOutfitData(outfit)));
   saveData('saved');
-  showToast('Outfit saved to favorites!');
+  showToast('Outfit saved to favorites');
   renderSavedOutfits();
 }
 
 function renderSavedOutfits() {
   savedContainer.innerHTML = '';
+
   if (savedOutfits.length === 0) {
     savedContainer.innerHTML = `
       <div class="empty-state">
         <span class="material-icons">favorite_border</span>
         <p>No saved outfits yet.</p>
-      </div>`;
+      </div>
+    `;
     return;
   }
 
-  savedOutfits.forEach(outfit => {
+  savedOutfits.forEach((outfit) => {
     renderOutfitCard(outfit, savedContainer, true);
   });
 }
@@ -625,8 +1941,7 @@ function handleSaveProfile(e) {
     city: document.getElementById('profile-city').value
   };
   saveData('profile');
-  showToast('Profile saved!');
+  showToast('Profile saved');
 }
 
-// Start
 document.addEventListener('DOMContentLoaded', init);

@@ -7,23 +7,17 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
-  <!-- Material Icons for Bottom Nav -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-
-  <!-- App Header -->
   <header class="app-header">
-    <h1>OutfitLab 🧪</h1>
+    <h1>ClosetLab</h1>
   </header>
 
-  <!-- Main Content Area -->
   <main id="main-content">
-    
-    <!-- LOGIN VIEW -->
     <section id="view-login" class="view">
-      <div class="card auth-card" style="margin-top: 10vh;">
+      <div class="card auth-card">
         <h2>Welcome to OutfitLab</h2>
         <form id="login-form">
           <div class="form-group">
@@ -36,13 +30,12 @@
           </div>
           <button type="submit" class="primary-btn">Login</button>
         </form>
-        <p style="text-align:center; margin-top:16px; font-size: 0.9rem;">Don't have an account? <a href="#" id="link-register" style="color:var(--primary-color); font-weight:600;">Register here</a></p>
+        <p class="auth-copy">Don't have an account? <a href="#" id="link-register" class="auth-link">Register here</a></p>
       </div>
     </section>
 
-    <!-- REGISTER VIEW -->
     <section id="view-register" class="view">
-      <div class="card auth-card" style="margin-top: 10vh;">
+      <div class="card auth-card">
         <h2>Create Account</h2>
         <form id="register-form">
           <div class="form-group">
@@ -55,14 +48,17 @@
           </div>
           <button type="submit" class="primary-btn">Register</button>
         </form>
-        <p style="text-align:center; margin-top:16px; font-size: 0.9rem;">Already have an account? <a href="#" id="link-login" style="color:var(--primary-color); font-weight:600;">Login here</a></p>
+        <p class="auth-copy">Already have an account? <a href="#" id="link-login" class="auth-link">Login here</a></p>
       </div>
     </section>
 
-    <!-- LAB VIEW -->
     <section id="view-lab" class="view">
       <div class="controls-card">
         <h2>Lab Controls</h2>
+        <div class="form-group">
+          <label>Outfit Category</label>
+          <select id="outfit-category"></select>
+        </div>
         <div class="toggle-row">
           <label class="toggle-label">
             Include Outerwear
@@ -77,7 +73,10 @@
             <span class="toggle-slider"></span>
           </label>
         </div>
-        <button id="btn-generate" class="primary-btn">Generate Outfits 🪄</button>
+        <button id="btn-generate" class="primary-btn">
+          <span class="material-icons">auto_awesome</span>
+          <span>Generate Outfits</span>
+        </button>
       </div>
 
       <div id="generated-outfits-container">
@@ -85,13 +84,12 @@
       </div>
     </section>
 
-    <!-- CLOSET VIEW -->
     <section id="view-closet" class="view">
       <div class="closet-header">
         <h2>My Closet</h2>
         <span id="closet-count" class="badge">0 items</span>
       </div>
-      
+
       <div class="filter-tabs">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="top">Tops</button>
@@ -105,7 +103,6 @@
       </div>
     </section>
 
-    <!-- ADD ITEM VIEW -->
     <section id="view-add-item" class="view">
       <div class="card add-item-card">
         <h2>Add New Item</h2>
@@ -114,15 +111,20 @@
             <label>Garment Name</label>
             <input type="text" id="item-name" placeholder="e.g. Blue denim jeans" required>
           </div>
-          
+
           <div class="form-group image-upload-group">
             <label for="item-image" class="image-upload-label">
               <span class="material-icons">add_a_photo</span>
               <span>Tap to Upload</span>
             </label>
             <input type="file" id="item-image" accept="image/*" required>
-            <img id="image-preview" src="" alt="Preview" style="display: none;">
+            <img id="image-preview" class="image-preview-hidden" src="" alt="Preview">
+            <div id="image-preview-actions" class="image-preview-actions image-preview-hidden">
+              <button type="button" id="btn-replace-image" class="image-mini-btn">Upload another</button>
+              <button type="button" id="btn-remove-image" class="image-mini-btn image-mini-btn-muted">Remove image</button>
+            </div>
           </div>
+          <p class="image-upload-hint">Take the photo with the garment laid flat, on a light background, and with bright lighting.</p>
 
           <div class="form-group">
             <label>Category</label>
@@ -165,15 +167,16 @@
       </div>
     </section>
 
-    <!-- SAVED VIEW -->
     <section id="view-saved" class="view">
-      <h2>Saved Favorites ❤️</h2>
+      <h2 class="section-title-with-icon">
+        <span class="material-icons">favorite</span>
+        <span>Saved Favorites</span>
+      </h2>
       <div id="saved-outfits-container">
         <!-- Saved outfits will appear here -->
       </div>
     </section>
 
-    <!-- PROFILE VIEW -->
     <section id="view-profile" class="view">
       <div class="card profile-card">
         <h2>My Profile</h2>
@@ -197,15 +200,13 @@
             <input type="text" id="profile-city" placeholder="Your city">
           </div>
           <button type="submit" class="primary-btn">Save Profile</button>
-          <button type="button" id="btn-logout" class="secondary-btn" style="margin-top: 16px; color: var(--text-dark);">Logout</button>
+          <button type="button" id="btn-logout" class="secondary-btn logout-btn">Logout</button>
         </form>
       </div>
     </section>
-
   </main>
 
-  <!-- Bottom Navigation Bar -->
-  <nav id="bottom-nav" class="bottom-nav" style="display: none;">
+  <nav id="bottom-nav" class="bottom-nav">
     <button class="nav-item active" data-target="view-lab">
       <span class="material-icons">science</span>
       <span>Lab</span>
@@ -229,7 +230,6 @@
     </button>
   </nav>
 
-  <!-- Notification Toast -->
   <div id="toast" class="toast">Action successful!</div>
 
   <script src="script.js"></script>
