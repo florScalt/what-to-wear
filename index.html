@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OutfitLab</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Material Icons for Bottom Nav -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <h1>OutfitLab 🧪</h1>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+    
+    <!-- LOGIN VIEW -->
+    <section id="view-login" class="view">
+      <div class="card auth-card" style="margin-top: 10vh;">
+        <h2>Welcome to OutfitLab</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="login-email" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="login-password" required>
+          </div>
+          <button type="submit" class="primary-btn">Login</button>
+        </form>
+        <p style="text-align:center; margin-top:16px; font-size: 0.9rem;">Don't have an account? <a href="#" id="link-register" style="color:var(--primary-color); font-weight:600;">Register here</a></p>
+      </div>
+    </section>
+
+    <!-- REGISTER VIEW -->
+    <section id="view-register" class="view">
+      <div class="card auth-card" style="margin-top: 10vh;">
+        <h2>Create Account</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="register-email" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="register-password" required>
+          </div>
+          <button type="submit" class="primary-btn">Register</button>
+        </form>
+        <p style="text-align:center; margin-top:16px; font-size: 0.9rem;">Already have an account? <a href="#" id="link-login" style="color:var(--primary-color); font-weight:600;">Login here</a></p>
+      </div>
+    </section>
+
+    <!-- LAB VIEW -->
+    <section id="view-lab" class="view">
+      <div class="controls-card">
+        <h2>Lab Controls</h2>
+        <div class="toggle-row">
+          <label class="toggle-label">
+            Include Outerwear
+            <input type="checkbox" id="toggle-outerwear" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <label class="toggle-label">
+            Include Shoes
+            <input type="checkbox" id="toggle-shoes" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <button id="btn-generate" class="primary-btn">Generate Outfits 🪄</button>
+      </div>
+
+      <div id="generated-outfits-container">
+        <!-- Generated outfits will appear here -->
+      </div>
+    </section>
+
+    <!-- CLOSET VIEW -->
+    <section id="view-closet" class="view">
+      <div class="closet-header">
+        <h2>My Closet</h2>
+        <span id="closet-count" class="badge">0 items</span>
+      </div>
+      
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="top">Tops</button>
+        <button class="filter-btn" data-filter="bottom">Bottoms</button>
+        <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+        <button class="filter-btn" data-filter="shoes">Shoes</button>
+      </div>
+
+      <div id="closet-grid" class="closet-grid">
+        <!-- Closet items will appear here -->
+      </div>
+    </section>
+
+    <!-- ADD ITEM VIEW -->
+    <section id="view-add-item" class="view">
+      <div class="card add-item-card">
+        <h2>Add New Item</h2>
+        <form id="add-item-form">
+          <div class="form-group">
+            <label>Garment Name</label>
+            <input type="text" id="item-name" placeholder="e.g. Blue denim jeans" required>
+          </div>
+          
+          <div class="form-group image-upload-group">
+            <label for="item-image" class="image-upload-label">
+              <span class="material-icons">add_a_photo</span>
+              <span>Tap to Upload</span>
+            </label>
+            <input type="file" id="item-image" accept="image/*" required>
+            <img id="image-preview" src="" alt="Preview" style="display: none;">
+          </div>
+
+          <div class="form-group">
+            <label>Category</label>
+            <select id="item-category" required>
+              <option value="" disabled selected>Select category</option>
+              <option value="top">Top</option>
+              <option value="bottom">Bottom</option>
+              <option value="outerwear">Outerwear</option>
+              <option value="shoes">Shoes</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Type</label>
+            <select id="item-type" required>
+              <option value="" disabled selected>Select type</option>
+              <option value="casual">Casual</option>
+              <option value="formal">Formal</option>
+              <option value="sport">Sport</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Color</label>
+            <div class="color-palette" id="item-color-palette"></div>
+            <input type="hidden" id="item-color" required>
+          </div>
+
+          <div class="form-group">
+            <label>Pattern</label>
+            <select id="item-pattern" required>
+              <option value="" disabled selected>Select pattern</option>
+              <option value="solid">Solid</option>
+              <option value="printed">Printed/Graphic</option>
+            </select>
+          </div>
+
+          <button type="submit" class="primary-btn">Save Item</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SAVED VIEW -->
+    <section id="view-saved" class="view">
+      <h2>Saved Favorites ❤️</h2>
+      <div id="saved-outfits-container">
+        <!-- Saved outfits will appear here -->
+      </div>
+    </section>
+
+    <!-- PROFILE VIEW -->
+    <section id="view-profile" class="view">
+      <div class="card profile-card">
+        <h2>My Profile</h2>
+        <form id="profile-form">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="profile-name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select id="profile-gender">
+              <option value="" disabled selected>Select gender</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="non-binary">Non-binary</option>
+              <option value="prefer-not">Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" id="profile-city" placeholder="Your city">
+          </div>
+          <button type="submit" class="primary-btn">Save Profile</button>
+          <button type="button" id="btn-logout" class="secondary-btn" style="margin-top: 16px; color: var(--text-dark);">Logout</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation Bar -->
+  <nav id="bottom-nav" class="bottom-nav" style="display: none;">
+    <button class="nav-item active" data-target="view-lab">
+      <span class="material-icons">science</span>
+      <span>Lab</span>
+    </button>
+    <button class="nav-item" data-target="view-closet">
+      <span class="material-icons">checkroom</span>
+      <span>Closet</span>
+    </button>
+    <button class="nav-item add-btn" data-target="view-add-item">
+      <div class="add-btn-inner">
+        <span class="material-icons">add</span>
+      </div>
+    </button>
+    <button class="nav-item" data-target="view-saved">
+      <span class="material-icons">favorite</span>
+      <span>Saved</span>
+    </button>
+    <button class="nav-item" data-target="view-profile">
+      <span class="material-icons">person</span>
+      <span>Profile</span>
+    </button>
+  </nav>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast">Action successful!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
