@@ -390,13 +390,10 @@ const OUTFIT_CATEGORIES = {
     preferredTags: ['relaxed'],
     preferredFamilies: ['light_neutral', 'earth', 'blue']
   },
-  premium: {
-    label: 'Premium',
-    targetFormality: 4.3,
-    preferredTypes: ['formal'],
-    preferredPatterns: ['solid'],
-    preferredTags: ['premium', 'elegant', 'minimal'],
-    preferredFamilies: ['dark_neutral', 'earth', 'blue']
+  random: {
+    label: 'Random',
+    isRandom: true,
+    targetFormality: 3
   }
 };
 
@@ -871,6 +868,15 @@ function bindEvents() {
   addItemForm.addEventListener('submit', handleAddItem);
   profileForm.addEventListener('submit', handleSaveProfile);
   btnGenerate.addEventListener('click', generateOutfits);
+
+  const btnCancelDelete = document.getElementById('btn-cancel-delete');
+  const btnConfirmDelete = document.getElementById('btn-confirm-delete');
+  if (btnCancelDelete) {
+    btnCancelDelete.addEventListener('click', closeConfirmModal);
+  }
+  if (btnConfirmDelete) {
+    btnConfirmDelete.addEventListener('click', executeDeleteClosetItem);
+  }
 }
 
 function switchView(viewId) {
@@ -1356,21 +1362,42 @@ function removeDeletedItemFromOutfits(outfits, deletedItemId) {
     .filter(Boolean);
 }
 
-function deleteClosetItem(itemId, itemName) {
-  const confirmed = window.confirm(`Delete "${itemName}" from your closet?`);
-  if (!confirmed) return;
+let pendingDeleteItemId = null;
 
-  clothes = clothes.filter((item) => String(item.id) !== String(itemId));
-  generatedOutfits = removeDeletedItemFromOutfits(generatedOutfits, itemId);
-  savedOutfits = removeDeletedItemFromOutfits(savedOutfits, itemId);
+function deleteClosetItem(itemId, itemName) {
+  pendingDeleteItemId = itemId;
+  const modal = document.getElementById('confirm-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    setTimeout(() => modal.classList.add('active'), 10);
+  }
+}
+
+function executeDeleteClosetItem() {
+  if (!pendingDeleteItemId) return;
+
+  clothes = clothes.filter((item) => String(item.id) !== String(pendingDeleteItemId));
+  generatedOutfits = removeDeletedItemFromOutfits(generatedOutfits, pendingDeleteItemId);
+  savedOutfits = removeDeletedItemFromOutfits(savedOutfits, pendingDeleteItemId);
 
   saveData('clothes');
   saveData('saved');
 
   renderCloset(currentClosetFilter);
-  renderGeneratedOutfits();
-  renderSavedOutfits();
+  if (typeof renderGeneratedOutfits === 'function') renderGeneratedOutfits();
+  if (typeof renderSavedOutfits === 'function') renderSavedOutfits();
   showToast('Item deleted from closet');
+
+  closeConfirmModal();
+}
+
+function closeConfirmModal() {
+  pendingDeleteItemId = null;
+  const modal = document.getElementById('confirm-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    setTimeout(() => modal.classList.add('hidden'), 300);
+  }
 }
 
 // ==========================================
@@ -1474,6 +1501,8 @@ function getSlotCandidateScore(candidate, slot, currentItems, context) {
     return Number.NEGATIVE_INFINITY;
   }
 
+  if (config.isRandom) return Math.random();
+
   let score = 0;
 
   const formalityDifference = Math.abs(candidate.formalityLevel - config.targetFormality);
@@ -1514,6 +1543,8 @@ function scoreOutfit(outfit) {
   if (!outfit || !validateOutfitItems(outfit.items)) return Number.NEGATIVE_INFINITY;
 
   const config = getCategoryConfig(outfit.category);
+  if (config.isRandom) return Math.random();
+
   const itemList = Object.values(outfit.items).filter(Boolean);
   let score = 0;
 
@@ -1546,6 +1577,8 @@ function scoreOutfit(outfit) {
 
 function buildOutfitExplanation(outfit) {
   const config = getCategoryConfig(outfit.category);
+  if (config.isRandom) return 'A completely randomized outfit for a fun and unexpected look.';
+
   const tone = outfit.isMonochrome
     ? `keeps the look inside the ${formatColorFamilyLabel(outfit.dominantColorFamily).toLowerCase()} family`
     : `balances ${formatColorFamilyLabel(outfit.dominantColorFamily).toLowerCase()} tones with the target vibe`;
