@@ -236,6 +236,53 @@
 
   <div id="toast" class="toast">Action successful!</div>
 
+  <!-- Edit Item Modal -->
+  <div id="edit-item-modal" class="modal-overlay hidden">
+    <div class="card modal-card edit-modal-card">
+      <h3>Edit Item</h3>
+      <form id="edit-item-form">
+        <div class="form-group">
+          <label>Garment Name</label>
+          <input type="text" id="edit-item-name" placeholder="e.g. Blue denim jeans" required>
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <select id="edit-item-category" required>
+            <option value="top">Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="outerwear">Outerwear</option>
+            <option value="shoes">Shoes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Type</label>
+          <select id="edit-item-type" required>
+            <option value="casual">Casual</option>
+            <option value="formal">Formal</option>
+            <option value="sport">Sport</option>
+            <option value="smart_casual">Smart Casual</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Color</label>
+          <div class="color-palette" id="edit-item-color-palette"></div>
+          <input type="hidden" id="edit-item-color" required>
+        </div>
+        <div class="form-group">
+          <label>Pattern</label>
+          <select id="edit-item-pattern" required>
+            <option value="solid">Solid</option>
+            <option value="printed">Printed/Graphic</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="btn-cancel-edit" class="secondary-btn">Cancel</button>
+          <button type="submit" class="primary-btn">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- Custom Confirmation Modal -->
   <div id="confirm-modal" class="modal-overlay hidden">
     <div class="card modal-card">
