@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="74" fill="#050505"/>
+  <path
+    d="M263 181c-16-16-39-25-66-25-60 0-105 44-105 101s45 101 105 101c29 0 53-10 69-28"
+    fill="none"
+    stroke="#ff0a8a"
+    stroke-width="80"
+    stroke-linecap="butt"
+  />
+  <path
+    d="M290 369V181h41v188h89"
+    fill="none"
+    stroke="#d6ff00"
+    stroke-width="41"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M310 181v-35c0-14 11-22 26-29 19-9 31-24 31-45 0-31-24-54-57-54-31 0-55 21-57 49"
+    fill="none"
+    stroke="#d6ff00"
+    stroke-width="20"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M290 193l-92 55c-15 9-25 19-25 39"
+    fill="none"
+    stroke="#d6ff00"
+    stroke-width="20"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M331 181l116 70c19 12 28 24 28 42"
+    fill="none"
+    stroke="#d6ff00"
+    stroke-width="20"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>
