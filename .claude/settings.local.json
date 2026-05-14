@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse \"c:\\\\Users\\\\fabri\\\\OneDrive\\\\Desktop\\\\New folder\\\\what-to-wear\" -Force)",
+      "Bash(Select-Object FullName)"
+    ]
+  }
+}

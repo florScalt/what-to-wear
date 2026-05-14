@@ -611,6 +611,34 @@ input:checked + .toggle-slider::before {
   z-index: 2;
 }
 
+.edit-item-btn {
+  position: absolute;
+  top: 8px;
+  right: 36px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: rgba(var(--text-rgb), 0.58);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  backdrop-filter: blur(8px);
+}
+
+.edit-item-btn .material-icons {
+  font-size: 0.95rem;
+}
+
+.edit-item-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text);
+}
+
 /* Forms */
 .form-group {
   margin-bottom: 16px;
@@ -1041,6 +1069,31 @@ input[type="file"] {
   border: none !important;
   color: #000000 !important;
   box-shadow: none !important;
+}
+
+.edit-modal-card {
+  text-align: left;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 92%;
+  max-width: 440px;
+}
+
+.edit-modal-card h3 {
+  text-align: center;
+}
+
+#btn-cancel-edit {
+  background: transparent !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+#btn-cancel-edit:hover,
+#btn-cancel-edit:active {
+  background: #000000 !important;
+  color: #ffffff !important;
 }
 
 #btn-confirm-delete:hover,

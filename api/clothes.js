@@ -66,6 +66,40 @@ module.exports = async function handler(req, res) {
       return res.status(201).json(serializeClothingItem({ _id: result.insertedId, ...clothingItem }));
     }
 
+    if (req.method === 'PUT') {
+      const { id } = req.query || {};
+
+      if (!id || !ObjectId.isValid(id)) {
+        return res.status(400).json({ error: 'Valid clothing id is required' });
+      }
+
+      const { name, category, color, style, pattern } = req.body || {};
+
+      if (!name || !category || !color || !style) {
+        return res.status(400).json({ error: 'Name, category, color and style are required' });
+      }
+
+      const updates = {
+        name: String(name).trim(),
+        category,
+        color,
+        style,
+        pattern: pattern || 'solid'
+      };
+
+      const result = await collection.findOneAndUpdate(
+        { _id: new ObjectId(id), userId: user.userId },
+        { $set: updates },
+        { returnDocument: 'after' }
+      );
+
+      if (!result) {
+        return res.status(404).json({ error: 'Clothing item not found' });
+      }
+
+      return res.status(200).json(serializeClothingItem(result));
+    }
+
     if (req.method === 'DELETE') {
       const { id } = req.query || {};
 
@@ -85,7 +119,7 @@ module.exports = async function handler(req, res) {
       return res.status(200).json({ message: 'Clothing item deleted' });
     }
 
-    res.setHeader('Allow', 'GET, POST, DELETE');
+    res.setHeader('Allow', 'GET, POST, PUT, DELETE');
     return res.status(405).json({ error: 'Method not allowed' });
   } catch (error) {
     console.error(error);

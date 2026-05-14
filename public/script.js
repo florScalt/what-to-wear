@@ -952,6 +952,22 @@ function bindEvents() {
   if (btnConfirmDelete) {
     btnConfirmDelete.addEventListener('click', executeDeleteClosetItem);
   }
+
+  const btnCancelEdit = document.getElementById('btn-cancel-edit');
+  const editItemForm = document.getElementById('edit-item-form');
+  if (btnCancelEdit) {
+    btnCancelEdit.addEventListener('click', closeEditModal);
+  }
+  if (editItemForm) {
+    editItemForm.addEventListener('submit', handleEditItem);
+  }
+
+  const editModalOverlay = document.getElementById('edit-item-modal');
+  if (editModalOverlay) {
+    editModalOverlay.addEventListener('click', (e) => {
+      if (e.target === editModalOverlay) closeEditModal();
+    });
+  }
 }
 
 function switchView(viewId) {
@@ -1051,6 +1067,95 @@ async function handleAddItem(e) {
 }
 
 // ==========================================
+// EDIT ITEM
+// ==========================================
+
+let editingItemId = null;
+
+function renderEditColorPalette(selectedColor) {
+  const palette = document.getElementById('edit-item-color-palette');
+  const input = document.getElementById('edit-item-color');
+  if (!palette) return;
+
+  palette.innerHTML = '';
+
+  presetColors.forEach((color) => {
+    const chip = document.createElement('div');
+    chip.className = 'color-chip';
+    chip.style.backgroundColor = color.value;
+    if (needsContrastRing(color.value)) chip.classList.add('is-light-chip');
+    if (color.name === selectedColor) chip.classList.add('selected');
+
+    chip.addEventListener('click', () => {
+      palette.querySelectorAll('.color-chip').forEach((c) => c.classList.remove('selected'));
+      chip.classList.add('selected');
+      input.value = color.name;
+    });
+
+    palette.appendChild(chip);
+  });
+
+  input.value = selectedColor || '';
+}
+
+function openEditModal(item) {
+  editingItemId = item.id;
+
+  document.getElementById('edit-item-name').value = item.name || '';
+  document.getElementById('edit-item-category').value = item.category || 'top';
+  document.getElementById('edit-item-type').value = item.type || 'casual';
+  document.getElementById('edit-item-pattern').value = item.pattern || 'solid';
+  renderEditColorPalette(item.color);
+
+  const modal = document.getElementById('edit-item-modal');
+  modal.classList.remove('hidden');
+  requestAnimationFrame(() => modal.classList.add('active'));
+}
+
+function closeEditModal() {
+  const modal = document.getElementById('edit-item-modal');
+  modal.classList.remove('active');
+  modal.addEventListener('transitionend', () => modal.classList.add('hidden'), { once: true });
+  editingItemId = null;
+}
+
+async function handleEditItem(e) {
+  e.preventDefault();
+
+  const color = document.getElementById('edit-item-color').value;
+  if (!color) {
+    showToast('Please select a color');
+    return;
+  }
+
+  const updates = {
+    name: document.getElementById('edit-item-name').value.trim(),
+    category: document.getElementById('edit-item-category').value,
+    style: document.getElementById('edit-item-type').value,
+    color,
+    pattern: document.getElementById('edit-item-pattern').value
+  };
+
+  try {
+    const updated = await apiFetch(`/api/clothes?id=${editingItemId}`, {
+      method: 'PUT',
+      body: JSON.stringify(updates)
+    });
+
+    const normalized = normalizeClothingItem(updated);
+    const index = clothes.findIndex((c) => c.id === editingItemId);
+    if (index !== -1) clothes[index] = normalized;
+  } catch (error) {
+    showToast(error.message || 'Could not update item');
+    return;
+  }
+
+  closeEditModal();
+  showToast('Item updated');
+  renderCloset(currentClosetFilter || 'all');
+}
+
+// ==========================================
 // CLOSET RENDER
 // ==========================================
 
@@ -1083,6 +1188,9 @@ function renderCloset(filter) {
     const name = item.name || item.color;
 
     card.innerHTML = `
+      <button type="button" class="edit-item-btn" aria-label="Edit ${name}">
+        <span class="material-icons">edit</span>
+      </button>
       <button type="button" class="delete-item-btn" aria-label="Delete ${name}">
         <span class="material-icons">close</span>
       </button>
@@ -1096,6 +1204,10 @@ function renderCloset(filter) {
         <span class="item-badge">${item.pattern}</span>
       </div>
     `;
+
+    card.querySelector('.edit-item-btn').addEventListener('click', () => {
+      openEditModal(item);
+    });
 
     const deleteButton = card.querySelector('.delete-item-btn');
     deleteButton.addEventListener('click', () => {
