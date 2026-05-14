@@ -441,7 +441,7 @@ const closetCount = document.getElementById('closet-count');
 const filterBtns = document.querySelectorAll('.filter-btn');
 
 // Saved elements
-const savedContainer = document.getElementById('saved-outfits-container');
+const savedContainer =document.getElementById('saved-outfits-container');
 
 function cloneData(value){
   return JSON.parse(JSON.stringify(value));
