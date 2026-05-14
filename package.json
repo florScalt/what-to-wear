@@ -1,0 +1,28 @@
+{
+  "name": "what-to-wear",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx vercel dev",
+    "vercel:dev": "npx vercel dev",
+    "test": "node --check api/register.js && node --check api/login.js && node --check api/clothes.js && node --check lib/mongo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florScalt/what-to-wear.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/florScalt/what-to-wear/issues"
+  },
+  "homepage": "https://github.com/florScalt/what-to-wear#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.2.0"
+  }
+}

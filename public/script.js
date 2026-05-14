@@ -401,7 +401,6 @@ let clothes = [];
 let savedOutfits = [];
 let generatedOutfits = [];
 let profile = { name: '', gender: '', city: '' };
-let users = [];
 let currentUser = null;
 let currentClosetFilter = 'all';
 
@@ -703,65 +702,138 @@ function renderCategoryOptions() {
   outfitCategorySelect.value = 'casual';
 }
 
-function init() {
+async function init() {
   renderColorPalette();
   renderCategoryOptions();
   loadData();
   bindEvents();
 
-  if (currentUser) {
-    showApp();
+  if (getToken() && currentUser) {
+    await showApp();
   } else {
     showAuth('view-login');
   }
 }
 
 function loadData() {
-  const storedClothes = localStorage.getItem('outfitlab_clothes');
-  const storedSaved = localStorage.getItem('outfitlab_saved');
-  const storedProfile = localStorage.getItem('outfitlab_profile');
-  const storedUsers = localStorage.getItem('outfitlab_users');
-  const storedCurrentUser = localStorage.getItem('outfitlab_currentUser');
-
-  if (storedUsers) users = JSON.parse(storedUsers);
+  const storedCurrentUser = localStorage.getItem('closetlab_user');
   if (storedCurrentUser) currentUser = JSON.parse(storedCurrentUser);
 
-  if (storedClothes) {
-    clothes = mergeDefaultItems(JSON.parse(storedClothes));
-    saveData('clothes');
-  } else {
-    clothes = [...defaultItems];
-    saveData('clothes');
-  }
+  savedOutfits = [];
+  profile = { name: '', gender: '', city: '' };
 
+  const storedSaved = localStorage.getItem(getUserStorageKey('saved'));
   if (storedSaved) {
     savedOutfits = JSON.parse(storedSaved)
       .map((outfit) => normalizeOutfitData(outfit))
       .filter(Boolean);
   }
 
+  const storedProfile = localStorage.getItem(getUserStorageKey('profile'));
   if (storedProfile) profile = JSON.parse(storedProfile);
 }
 
 function saveData(type) {
-  if (type === 'clothes' || !type) localStorage.setItem('outfitlab_clothes', JSON.stringify(clothes));
-  if (type === 'saved' || !type) localStorage.setItem('outfitlab_saved', JSON.stringify(savedOutfits));
-  if (type === 'profile' || !type) localStorage.setItem('outfitlab_profile', JSON.stringify(profile));
-  if (type === 'users' || !type) localStorage.setItem('outfitlab_users', JSON.stringify(users));
-  if (type === 'currentUser' || !type) localStorage.setItem('outfitlab_currentUser', JSON.stringify(currentUser));
+  if (type === 'saved' || !type) localStorage.setItem(getUserStorageKey('saved'), JSON.stringify(savedOutfits));
+  if (type === 'profile' || !type) localStorage.setItem(getUserStorageKey('profile'), JSON.stringify(profile));
+  if (type === 'currentUser' || !type) {
+    if (currentUser) {
+      localStorage.setItem('closetlab_user', JSON.stringify(currentUser));
+    } else {
+      localStorage.removeItem('closetlab_user');
+    }
+  }
 }
 
 // ==========================================
 // AUTHENTICATION
 // ==========================================
 
+function getUserStorageKey(key) {
+  return currentUser?.id ? `closetlab_${key}_${currentUser.id}` : `closetlab_${key}`;
+}
+
+function getToken() {
+  return localStorage.getItem('closetlab_token');
+}
+
+function setSession(token, user) {
+  localStorage.setItem('closetlab_token', token);
+  currentUser = user;
+  saveData('currentUser');
+}
+
+function clearSession() {
+  localStorage.removeItem('closetlab_token');
+  currentUser = null;
+  clothes = [];
+  generatedOutfits = [];
+}
+
+async function apiFetch(url, options = {}) {
+  const headers = {
+    ...(options.headers || {})
+  };
+
+  if (options.body && !headers['Content-Type']) {
+    headers['Content-Type'] = 'application/json';
+  }
+
+  const token = getToken();
+  if (token) headers.Authorization = `Bearer ${token}`;
+
+  const response = await fetch(url, {
+    ...options,
+    headers
+  });
+
+  let data = null;
+  try {
+    data = await response.json();
+  } catch {
+    data = null;
+  }
+
+  if (response.status === 401) {
+    handleLogout(false);
+    throw new Error(data?.error || 'Unauthorized');
+  }
+
+  if (!response.ok) {
+    throw new Error(data?.error || 'Request failed');
+  }
+
+  return data;
+}
+
+function normalizeClothingItem(item) {
+  return {
+    ...item,
+    id: item._id || item.id,
+    image: item.imageUrl || item.image,
+    type: item.style || item.type || 'casual',
+    pattern: item.pattern || 'solid'
+  };
+}
+
+async function loadClothes() {
+  clothes = (await apiFetch('/api/clothes')).map(normalizeClothingItem);
+}
+
 function showAuth(viewId) {
   if (bottomNav) bottomNav.style.display = 'none';
   switchView(viewId);
 }
 
-function showApp() {
+async function showApp() {
   if (bottomNav) bottomNav.style.display = 'flex';
+  try {
+    await loadClothes();
+  } catch (error) {
+    showToast(error.message || 'Could not load closet');
+    return;
+  }
+
   renderCloset('all');
   renderSavedOutfits();
   renderProfile();
@@ -771,50 +843,53 @@ function showApp() {
   switchView('view-lab');
 }
 
-function handleLogin(e) {
+async function handleLogin(e) {
   e.preventDefault();
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
 
-  const user = users.find((entry) => entry.email === email && entry.password === password);
-  if (!user) {
-    showToast('Invalid email or password');
-    return;
-  }
+  try {
+    const data = await apiFetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password })
+    });
 
-  currentUser = user;
-  saveData('currentUser');
-  loginForm.reset();
-  showToast('Login successful');
-  showApp();
+    setSession(data.token, data.user);
+    loginForm.reset();
+    loadData();
+    showToast('Login successful');
+    await showApp();
+  } catch (error) {
+    showToast(error.message || 'Invalid email or password');
+  }
 }
 
-function handleRegister(e) {
+async function handleRegister(e) {
   e.preventDefault();
+  const name = document.getElementById('register-name').value;
   const email = document.getElementById('register-email').value;
   const password = document.getElementById('register-password').value;
 
-  if (users.find((entry) => entry.email === email)) {
-    showToast('Email already registered');
-    return;
+  try {
+    const data = await apiFetch('/api/register', {
+      method: 'POST',
+      body: JSON.stringify({ name, email, password })
+    });
+
+    setSession(data.token, data.user);
+    registerForm.reset();
+    loadData();
+    showToast('Account created');
+    await showApp();
+  } catch (error) {
+    showToast(error.message || 'Could not create account');
   }
-
-  const newUser = { email, password };
-  users.push(newUser);
-  saveData('users');
-
-  currentUser = newUser;
-  saveData('currentUser');
-
-  registerForm.reset();
-  showToast('Account created');
-  showApp();
 }
 
-function handleLogout() {
-  currentUser = null;
+function handleLogout(showMessage = true) {
+  clearSession();
   saveData('currentUser');
-  showToast('Logged out');
+  if (showMessage) showToast('Logged out');
   showAuth('view-login');
 }
 
@@ -1244,7 +1319,7 @@ function handleImageUpload(e) {
   reader.readAsDataURL(file);
 }
 
-function handleAddItem(e) {
+async function handleAddItem(e) {
   e.preventDefault();
 
   if (!currentBase64Image) {
@@ -1260,17 +1335,25 @@ function handleAddItem(e) {
   }
 
   const newItem = {
-    id: Date.now(),
-    name: document.getElementById('item-name').value,
-    image: currentBase64Image,
+    name: document.getElementById('item-name').value.trim(),
     category: document.getElementById('item-category').value,
-    type: document.getElementById('item-type').value,
     color: itemColor,
+    style: document.getElementById('item-type').value,
+    imageUrl: currentBase64Image,
     pattern: document.getElementById('item-pattern').value
   };
 
-  clothes.unshift(newItem);
-  saveData('clothes');
+  try {
+    const savedItem = await apiFetch('/api/clothes', {
+      method: 'POST',
+      body: JSON.stringify(newItem)
+    });
+
+    clothes.unshift(normalizeClothingItem(savedItem));
+  } catch (error) {
+    showToast(error.message || 'Could not save item');
+    return;
+  }
 
   addItemForm.reset();
   clearUploadedImage();
@@ -1373,14 +1456,23 @@ function deleteClosetItem(itemId, itemName) {
   }
 }
 
-function executeDeleteClosetItem() {
+async function executeDeleteClosetItem() {
   if (!pendingDeleteItemId) return;
+
+  try {
+    await apiFetch(`/api/clothes?id=${encodeURIComponent(pendingDeleteItemId)}`, {
+      method: 'DELETE'
+    });
+  } catch (error) {
+    showToast(error.message || 'Could not delete item');
+    closeConfirmModal();
+    return;
+  }
 
   clothes = clothes.filter((item) => String(item.id) !== String(pendingDeleteItemId));
   generatedOutfits = removeDeletedItemFromOutfits(generatedOutfits, pendingDeleteItemId);
   savedOutfits = removeDeletedItemFromOutfits(savedOutfits, pendingDeleteItemId);
 
-  saveData('clothes');
   saveData('saved');
 
   renderCloset(currentClosetFilter);
