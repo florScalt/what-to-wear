@@ -443,7 +443,7 @@ const filterBtns = document.querySelectorAll('.filter-btn');
 // Saved elements
 const savedContainer = document.getElementById('saved-outfits-container');
 
-function cloneData(value) {
+function cloneData(value){
   return JSON.parse(JSON.stringify(value));
 }
 
