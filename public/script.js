@@ -441,7 +441,8 @@ const closetCount = document.getElementById('closet-count');
 const filterBtns = document.querySelectorAll('.filter-btn');
 
 // Saved elements
-const savedContainer =document.getElementById('saved-outfits-container');
+const savedContainer = document.getElementById('saved-outfits-container');
+const savedCount = document.getElementById('saved-count');
 
 function cloneData(value){
   return JSON.parse(JSON.stringify(value));
@@ -1831,6 +1832,7 @@ function saveOutfit(outfit) {
 
 function renderSavedOutfits() {
   savedContainer.innerHTML = '';
+  if (savedCount) savedCount.textContent = `${savedOutfits.length} outfit${savedOutfits.length === 1 ? '' : 's'}`;
 
   if (savedOutfits.length === 0) {
     savedContainer.innerHTML = `
